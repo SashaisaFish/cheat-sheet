@@ -1,6 +1,9 @@
 /* || IMPORTS */
 @import url("https://fonts.googleapis.com/css?family=Limelight&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import "./media-queries/phone.css" screen and (max-width: 480px);
+@import "./media-queries/tablet.css" screen, (min-width: 481px) and (max-width: 1024px);
+@import "./media-queries/desktop.css" screen and (min-width: 1025px);
 
 /* || VARIABLES */
 :root {
@@ -44,16 +47,17 @@ header{
 }
 nav{
     grid-column: 3;
-}
-nav ul{
     display: flex;
     flex-wrap: wrap;
     place-content: space-evenly;
     place-items: center;
     place-self: center;
     font-size: 1.2em;
-    
     padding: 0;
+
+}
+nav ul{
+
 }
 main{
     display: flex;
@@ -81,6 +85,7 @@ h2{
 /* || a */
 a{
     text-decoration: none;
+    margin: .5vh 1vw;
 }
 a:link, a:visited {
     color: var(--white-grey);
@@ -88,11 +93,12 @@ a:link, a:visited {
 a:hover, a:active {
     color: var(--white-grey);
     text-shadow: 0 1px 3px var(--white-grey);
+    box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
 }
 /* || li */
 li{
     list-style: none;
-    margin: .2vh 1vw;
+    
 }
 
 /* || CLASSES */
@@ -102,14 +108,12 @@ li{
 /* || GRIDS */
 
 /* || OTHER */
-nav li{
+nav a{
     border-radius: 7px;
     padding: 1.5%;
     box-shadow: var(--button-shine);
 }
-li:hover{
-    box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
-}
+
 #index-nav{
     background-color: var(--indigo);
 }
