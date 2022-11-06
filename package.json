@@ -1,0 +1,30 @@
+{
+	"name": "cheatsheet",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test:index": "jest ./tests/index-page --verbose",
+		"test:watch:index": "jest ./tests/index-page --watch-all --verbose",
+		"test:html": "jest ./tests/html-page --verbose",
+		"test:watch:html": "jest ./tests/html-page --watch-all --verbose",
+		"test:css": "jest ./tests/css-page --verbose",
+		"test:watch:css": "jest ./tests/css-page --watch-all --verbose",
+		"test:js": "jest ./tests/javascript-page --verbose",
+		"test:watch:js": "jest ./tests/javascript-page --watch-all --verbose",
+		"test:dom": "jest ./tests/dom-page --verbose",
+		"test:watch:dom": "jest ./tests/dom-page --watch-all --verbose",
+		"test:other": "jest ./tests/other-page --verbose",
+		"test:watch:other": "jest ./tests/other-page --watch-all --verbose",
+		"test:all": "jest",
+		"test:coverage": "jest --collect-coverage"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"jest": "^29.2.2"
+	}
+}

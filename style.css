@@ -1,0 +1,101 @@
+/* || IMPORTS */
+@import url("https://fonts.googleapis.com/css?family=Limelight&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+
+/* || VARIABLES */
+:root {
+    --dark-grey: #40333D;
+    --mid-grey: #5E5363;
+    --light-grey: #918B9A;
+    --white-grey: #CAC9D9;
+    --indigo: #5225a0;
+    --light-blue: #33AEBA;
+    --dark-pink: #A62863;
+    --light-pink: #F53575;
+    --orange: #DE5B37;
+    --yellow: #E3B32D;
+    --main-text: "Quicksand", Arial, Helvetica, sans-serif;
+    --header-text: "Limelight", Times, serif;
+}
+
+/* || PRIMARY ELEMENTS */
+html{
+    font-family: var(--main-text);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--dark-grey)
+}
+header{
+    display: grid;
+    grid-template-columns: min-content 1fr 3fr;
+    text-align: center;
+    align-items: center;
+    margin: 4vh 5vw auto;
+    border-bottom: 1vh solid var(--indigo);
+}
+nav{
+    grid-column: 3;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    place-content: space-evenly;
+    place-items: center;
+    place-self: center;
+    font-size: 1.2em;
+    
+    padding: 0;
+}
+main{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+footer{
+    text-align: center;
+    color: var(--mid-grey);
+}
+
+
+/* || SECONDARY ELEMENTS */
+h1{
+    font-family: var(--header-text);
+    font-size: 4em;
+    border-right: 3px solid var(--indigo);
+    padding: 0 2vw 0 0;
+    margin: 3vh auto;
+    
+}
+h2{
+    font-family: var(--header-text);
+    font-size: 2em;
+}
+/* || a */
+a{
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: var(--white-grey);
+}
+a:hover, a:active {
+    color: var(--white-grey);
+    text-shadow: 0 1px 3px var(--white-grey);
+}
+/* || li */
+li{
+    list-style: none;
+    margin: .2vh 1vw;
+}
+
+/* || CLASSES */
+
+/* || FONTS */
+
+/* || GRIDS */
+
+/* || OTHER */
