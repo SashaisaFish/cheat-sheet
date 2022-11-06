@@ -24,6 +24,15 @@ function makeNavBar() {
 	const domText = document.createElement("li");
 	const otherText = document.createElement("li");
 
+	// set attributess
+
+	indexText.id = "index-nav"
+	htmlText.id = "html-nav";
+	cssText.id = "css-nav";
+	jsText.id = "js-nav";
+	domText.id = "dom-nav";
+	otherText.id = "other-nav";
+
 	// create <a> elements
 	const indexLink = document.createElement("a");
 	const htmlLink = document.createElement("a");
@@ -33,34 +42,29 @@ function makeNavBar() {
 	const otherLink = document.createElement("a");
 
 	// set attributes
-	setLinkAttributes(indexLink, "index-page", "../index.html", "Home");
+	setLinkAttributes(indexLink, "../index.html", "Home");
 	setLinkAttributes(
 		htmlLink,
-		"html-page",
 		"../2-html-page/html-page.html",
 		"HTML"
 	);
 	setLinkAttributes(
 		cssLink,
-		"css-page",
 		"../3-css-page/css-page.html",
 		"CSS"
 	);
 	setLinkAttributes(
 		jsLink,
-		"javascript-page",
 		"../4-javascript-page/javascript-page.html",
 		"JavaScript"
 	);
 	setLinkAttributes(
 		domLink,
-		"dom-page",
 		"../5-dom-page/dom-page.html",
 		"DOM"
 	);
 	setLinkAttributes(
 		otherLink,
-		"other-page",
 		"../6-other-page/other-page.html",
 		"Other"
 	);
@@ -101,8 +105,7 @@ makeFooter();
  * @param  {string} hrefLink
  * @param  {string} text
  */
-function setLinkAttributes(page, pageId, hrefLink, text) {
-	page.id = pageId;
+function setLinkAttributes(page, hrefLink, text) {
 	page.href = hrefLink;
 	page.innerText = text;
 }

@@ -1,8 +1,6 @@
 /* || IMPORTS */
 @import url("https://fonts.googleapis.com/css?family=Limelight&display=swap");
-
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-
 
 /* || VARIABLES */
 :root {
@@ -10,12 +8,19 @@
     --mid-grey: #5E5363;
     --light-grey: #918B9A;
     --white-grey: #CAC9D9;
-    --indigo: #5225a0;
-    --light-blue: #33AEBA;
+    --indigo-border: #401b7e;
+    --indigo: #502f97;
+    --light-blue-border: #1d8694;
+    --light-blue: #2ca0a6;
+    --dark-pink-border: #841f4e;
     --dark-pink: #A62863;
-    --light-pink: #F53575;
-    --orange: #DE5B37;
-    --yellow: #E3B32D;
+    --light-pink-border: #c71b54;
+    --light-pink: #df326c;
+    --orange-border: #a94426;
+    --orange: #bd552b;
+    --yellow-border: #c28c18;
+    --yellow: #cba228;
+    --button-shine: 1px 2px 3px rgba(255, 255, 255, 40%) inset, -3px -2px 4px rgba(0, 0, 0, 50%) inset;
     --main-text: "Quicksand", Arial, Helvetica, sans-serif;
     --header-text: "Limelight", Times, serif;
 }
@@ -36,7 +41,6 @@ header{
     text-align: center;
     align-items: center;
     margin: 4vh 5vw auto;
-    border-bottom: 1vh solid var(--indigo);
 }
 nav{
     grid-column: 3;
@@ -66,7 +70,6 @@ footer{
 h1{
     font-family: var(--header-text);
     font-size: 4em;
-    border-right: 3px solid var(--indigo);
     padding: 0 2vw 0 0;
     margin: 3vh auto;
     
@@ -99,3 +102,29 @@ li{
 /* || GRIDS */
 
 /* || OTHER */
+nav li{
+    border-radius: 7px;
+    padding: 1.5%;
+    box-shadow: var(--button-shine);
+}
+li:hover{
+    box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
+}
+#index-nav{
+    background-color: var(--indigo);
+}
+.html-nav{
+
+}
+.css-nav{
+
+}
+.js-nav{
+
+}
+.dom-nav{
+
+}
+.other-nav{
+
+}
