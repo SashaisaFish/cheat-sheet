@@ -1,11 +1,22 @@
+@import "../style.css";
 /* || LANDSCAPE */
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
 
-    
+
 
 }
 /* || PORTRAIT */
-@media screen and (orientation: portrait) {
-
+@media (orientation: portrait) {
+nav{
+    column-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "i"
+    "h"
+    "c"
+    "j"
+    "d"
+    "o";
+}
 
 }
