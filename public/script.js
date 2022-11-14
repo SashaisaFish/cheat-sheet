@@ -32,34 +32,27 @@ function makeNavBar() {
 
 	// create <a> elements
 
-	indexLink = createLink(indexLink, "index-nav", "../index.html", [
+	indexLink = createLink(indexLink, "index-nav", "/index/", [
 		"link-btn",
 		"index-bubble",
 	]);
-	htmlLink = createLink(
-		htmlLink,
-		"html-nav",
-		"../2-html-page/html-page.html",
-		["link-btn", "html-bubble"]
-	);
-	cssLink = createLink(cssLink, "css-nav", "../3-css-page/css-page.html", [
+	htmlLink = createLink(htmlLink, "html-nav", "/html/", [
+		"link-btn",
+		"html-bubble",
+	]);
+	cssLink = createLink(cssLink, "css-nav", "/css/", [
 		"link-btn",
 		"css-bubble",
 	]);
-	jsLink = createLink(jsLink, "js-nav", "../4-js-page/js-page.html", [
-		"link-btn",
-		"js-bubble",
-	]);
-	domLink = createLink(domLink, "dom-nav", "../5-dom-page/dom-page.html", [
+	jsLink = createLink(jsLink, "js-nav", "/js/", ["link-btn", "js-bubble"]);
+	domLink = createLink(domLink, "dom-nav", "/dom/", [
 		"link-btn",
 		"dom-bubble",
 	]);
-	otherLink = createLink(
-		otherLink,
-		"other-nav",
-		"../6-other-page/other-page.html",
-		["link-btn", "other-bubble"]
-	);
+	otherLink = createLink(otherLink, "other-nav", "/other/", [
+		"link-btn",
+		"other-bubble",
+	]);
 
 	// append <p> elements to <a> elements
 	indexLink.append(indexText);

@@ -1,15 +1,17 @@
+@import "../public/style.css";
+
 /* || PRIMARY ELEMENTS */
-header{
-    border-bottom: 1vh solid var(--indigo-border);
+header {
+	border-bottom: 1vh solid var(--indigo-border);
 }
-main{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
+main {
+	display: flex;
+	text-align: center;
+	flex-direction: column;
 }
 /* || SECONDARY ELEMENTS */
-h1{
-    border-right: 3px solid var(--indigo-border);
+h1 {
+	border-right: 3px solid var(--indigo-border);
 }
 
 /* || CLASSES */
