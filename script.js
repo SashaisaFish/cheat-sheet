@@ -7,89 +7,72 @@ const footer = document.querySelector("footer");
 /**Element: *Nav*
  */
 function makeNavBar() {
-	// Constants
+	// declare variables
+	let indexText;
+	let indexLink;
+	let htmlText;
+	let htmlLink;
+	let cssText;
+	let cssLink;
+	let jsText;
+	let jsLink;
+	let domText;
+	let domLink;
+	let otherText;
+	let otherLink;
 
-	// // create <ul> element
-	// const list = document.createElement("ul");
-
-	// // set attributes
-	// list.id = "nav-list";
-
-	// // create <li> elements
-
-	// const indexText = document.createElement("li");
-	// const htmlText = document.createElement("li");
-	// const cssText = document.createElement("li");
-	// const jsText = document.createElement("li");
-	// const domText = document.createElement("li");
-	// const otherText = document.createElement("li");
-
-	// // set attributess
-
-	// indexText.id = "index-nav"
-	// htmlText.id = "html-nav";
-	// cssText.id = "css-nav";
-	// jsText.id = "js-nav";
-	// domText.id = "dom-nav";
-	// otherText.id = "other-nav";
+	// create <p> elements
+	indexText = createP(indexText, "index-nav-text", "link-text", "Home");
+	htmlText = createP(htmlText, "html-nav-text", "link-text", "HTML");
+	cssText = createP(cssText, "css-nav-text", "link-text", "CSS");
+	jsText = createP(jsText, "js-nav-text", "link-text", "JavaScript");
+	domText = createP(domText, "dom-nav-text", "link-text", "DOM");
+	otherText = createP(otherText, "other-nav-text", "link-text", "Other");
 
 	// create <a> elements
-	const indexLink = document.createElement("a");
-	const htmlLink = document.createElement("a");
-	const cssLink = document.createElement("a");
-	const jsLink = document.createElement("a");
-	const domLink = document.createElement("a");
-	const otherLink = document.createElement("a");
 
-	// set attributes
-	setLinkAttributes(indexLink, "index-nav", "../index.html", "<p>Home</p>");
-	setLinkAttributes(
+	indexLink = createLink(indexLink, "index-nav", "../index.html", "link-btn");
+	htmlLink = createLink(
 		htmlLink,
 		"html-nav",
 		"../2-html-page/html-page.html",
-		"<p>HTML</p>"
+		"link-btn"
 	);
-	setLinkAttributes(
+	cssLink = createLink(
 		cssLink,
 		"css-nav",
 		"../3-css-page/css-page.html",
-		"<p>CSS</p>"
+		"link-btn"
 	);
-	setLinkAttributes(
+	jsLink = createLink(
 		jsLink,
 		"js-nav",
 		"../4-javascript-page/javascript-page.html",
-		"<p>JavaScript</p>"
+		"link-btn"
 	);
-	setLinkAttributes(
+	domLink = createLink(
 		domLink,
 		"dom-nav",
 		"../5-dom-page/dom-page.html",
-		"<p>DOM</p>"
+		"link-btn"
 	);
-	setLinkAttributes(
+	otherLink = createLink(
 		otherLink,
 		"other-nav",
 		"../6-other-page/other-page.html",
-		"<p>Other</p>"
+		"link-btn"
 	);
+
+	// append <p> elements to <a> elements
+	indexLink.append(indexText);
+	htmlLink.append(htmlText);
+	cssLink.append(cssText);
+	jsLink.append(jsText);
+	domLink.append(domText);
+	otherLink.append(otherText);
 
 	// append <a> elements to <nav> element
 	nav.append(indexLink, htmlLink, cssLink, jsLink, domLink, otherLink);
-
-	// // append <a> elements to <li> elements
-	// indexText.append(indexLink);
-	// htmlText.append(htmlLink);
-	// cssText.append(cssLink);
-	// jsText.append(jsLink);
-	// domText.append(domLink);
-	// otherText.append(otherLink);
-
-	// // append <li> elements to <ul> elements
-	// list.append(indexText, htmlText, cssText, jsText, domText, otherText);
-
-	// // append <ul> element to nav
-	// nav.append(list);
 }
 makeNavBar();
 
@@ -107,14 +90,28 @@ makeFooter();
 
 // HELPER FUNCTIONS
 
-/**CREATE LINK
- * @param  {} element
+/**CREATE LINK ELEMENT
+ * @param  {string} elementName
  * @param  {string} elementId
  * @param  {string} hrefLink
+ */
+function createLink(elementName, elementId, elementLink, elementClasses) {
+	elementName = document.createElement("a");
+	elementName.id = elementId;
+	elementName.href = elementLink;
+	elementName.classList.add(elementClasses);
+	return elementName;
+}
+/** CREATE P ELEMENT
+ * @param  {string} elementName
+ * @param  {string} elementId
+ * @param  {string} elementClasses
  * @param  {string} text
  */
-function setLinkAttributes(element, elementId, hrefLink, text) {
-	element.id = elementId;
-	element.href = hrefLink;
-	element.innerHTML = text;
+function createP(elementName, elementId, elementClasses, text) {
+	elementName = document.createElement("p");
+	elementName.id = elementId;
+	elementName.classList.add(elementClasses);
+	elementName.innerText = text;
+	return elementName;
 }
