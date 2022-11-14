@@ -4,7 +4,7 @@ import {
 	makeFooter,
 	createLink,
 	createP,
-} from "../script";
+} from "./script";
 
 // on load, ensure NavBar and Footer are created
 makeNavBar();

@@ -93,6 +93,9 @@ li {
 }
 
 /* || CLASSES */
+.hidden {
+	display: none;
+}
 .link-btn {
 	box-sizing: border-box;
 	min-width: 110px;
@@ -106,33 +109,46 @@ li {
 	box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
 }
 
+.info-article{
+
+}
+.info-article-large{
+
+}
+.info-title {
+
+}
+.info-entry {
+	
+}
+
 /* || FONTS */
 
 /* || GRIDS */
 
 /* || OTHER */
 
-#index-nav {
+.index-bubble {
 	background-color: var(--indigo);
 	grid-area: i;
 }
-#html-nav {
+.html-bubble {
 	background-color: var(--light-blue);
 	grid-area: h;
 }
-#css-nav {
+.css-bubble {
 	background-color: var(--green);
 	grid-area: c;
 }
-#js-nav {
+.js-bubble {
 	background-color: var(--orange);
 	grid-area: j;
 }
-#dom-nav {
+.dom-bubble {
 	background-color: var(--yellow);
 	grid-area: d;
 }
-#other-nav {
+.other-bubble {
 	background-color: var(--light-pink);
 	grid-area: o;
 }
