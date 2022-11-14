@@ -3,7 +3,9 @@ header{
     border-bottom: 1vh solid var(--indigo-border);
 }
 main{
-
+    display: flex;
+    text-align: center;
+    flex-direction: column;
 }
 /* || SECONDARY ELEMENTS */
 h1{
