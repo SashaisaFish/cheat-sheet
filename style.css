@@ -1,99 +1,93 @@
 /* || IMPORTS */
 @import url("https://fonts.googleapis.com/css?family=Limelight&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-@import "./media-queries/phone.css" (max-width: 480px);
-@import "./media-queries/tablet.css" (min-width: 481px) and (max-width: 1024px);
-@import "./media-queries/desktop.css" (min-width: 1025px);
+@import "./media-queries/phone.css" screen and (max-device-width: 480px),
+	screen and (max-width: 480px);
+@import "./media-queries/tablet.css" screen and (min-device-width: 481px) and
+		(max-device-width: 1024px),
+	screen and (min-width: 481px) and (max-width: 1024px);
+@import "./media-queries/desktop.css" screen and (min-device-width: 1025px),
+	screen and (min-width: 1025px);
 
 /* || VARIABLES */
 :root {
-    --dark-grey: #40333D;
-    --mid-grey: #5E5363;
-    --light-grey: #918B9A;
-    --white-grey: #CAC9D9;
-    --indigo-border: #401b7e;
-    --indigo: #502f97;
-    --light-blue-border: #1d8694;
-    --light-blue: #2ca0a6;
-    --dark-pink-border: #841f4e;
-    --dark-pink: #A62863;
-    --light-pink-border: #c71b54;
-    --light-pink: #df326c;
-    --orange-border: #a94426;
-    --orange: #bd552b;
-    --yellow-border: #c28c18;
-    --yellow: #cba228;
-    --button-shine: 1px 2px 3px rgba(255, 255, 255, 40%) inset, -3px -2px 4px rgba(0, 0, 0, 50%) inset;
-    --main-text: "Quicksand", Arial, Helvetica, sans-serif;
-    --header-text: "Limelight", Times, serif;
+	--dark-grey: #40333d;
+	--mid-grey: #5e5363;
+	--light-grey: #918b9a;
+	--white-grey: #cac9d9;
+	--indigo-border: #331a5d;
+	--indigo: #502f97;
+	--light-blue-border: #1c656f;
+	--light-blue: #2ca0a6;
+	--green-border: #236b25;
+	--green: #2e9732;
+	--orange-border: #6d281e;
+	--orange: #bd552b;
+	--yellow-border: #86560d;
+	--yellow: #cba228;
+	--light-pink-border: #7f1a3c;
+	--light-pink: #df326c;
+	--button-shine: 1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-3px -2px 4px rgba(0, 0, 0, 50%) inset;
+	--main-text: "Quicksand", Arial, Helvetica, sans-serif;
+	--header-text: "Limelight", Times, serif;
 }
 
 /* || PRIMARY ELEMENTS */
-html{
-    font-family: var(--main-text);
+html {
+	font-family: var(--main-text);
 }
-body{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-color: var(--dark-grey)
+body {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	background-color: var(--dark-grey);
 }
-header{
-    display: grid;
-    grid-template-columns: min-content 2fr 3fr;
-    text-align: center;
-    align-items: center;
-    margin: 4vh 5vw auto;
+header {
+	max-width: 100%;
+	display: grid;
+	text-align: center;
+	align-items: center;
+	margin: 4vh 5vw auto;
+	padding: 1vh 0;
 }
-nav{
-    grid-column: 3;
-    display: grid;
-    gap: 1vw;
-    /* grid-template-areas: 
-    "i h"
-    "c j"
-    "d o"; */
-    /* place-content: center; */
-    /* place-self: center; */
-    font-size: 1.25em;
-    padding: 0;
-
+nav {
+	max-width: 100%;
+	font-size: 1.25em;
 }
 
-footer{
-    text-align: center;
-    color: var(--mid-grey);
+footer {
+	text-align: center;
+	color: var(--mid-grey);
 }
-
 
 /* || SECONDARY ELEMENTS */
-h1{
-    font-family: var(--header-text);
-    font-size: 4em;
-    padding: 0 2vw 0 0;
-    margin: 3vh auto;
-    
+h1 {
+	font-family: var(--header-text);
+	padding: 0 2vw 0 0;
+	margin: 3vh auto;
 }
-h2{
-    font-family: var(--header-text);
-    font-size: 2em;
+h2 {
+	font-family: var(--header-text);
+	font-size: 2em;
 }
 /* || a */
-a{
-    text-decoration: none;
+a {
+	text-decoration: none;
 }
-a:link, a:visited {
-    color: var(--white-grey);
+a:link,
+a:visited {
+	color: var(--white-grey);
 }
-a:hover, a:active {
-    color: var(--white-grey);
-    text-shadow: 0 1px 3px var(--white-grey);
-    
+a:hover,
+a:active {
+	color: var(--white-grey);
+	text-shadow: 0 1px 3px var(--white-grey);
 }
 /* || li */
-li{
-    list-style: none;
-    
+li {
+	list-style: none;
 }
 
 /* || CLASSES */
@@ -103,31 +97,38 @@ li{
 /* || GRIDS */
 
 /* || OTHER */
-nav a{
-    border-radius: 7px;
-    padding: 3%;
-    box-shadow: var(--button-shine);
+nav a {
+	box-sizing: border-box;
+	min-width: 110px;
+	border-radius: 7px;
+	box-shadow: var(--button-shine);
 }
-nav a:hover, a:active{
-    box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
+nav a:hover,
+a:active {
+	box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
 }
 
-#index-nav{
-    background-color: var(--indigo);
-    grid-area: i;
+#index-nav {
+	background-color: var(--indigo);
+	grid-area: i;
 }
-.html-nav{
-    grid-area: h;
+#html-nav {
+	background-color: var(--light-blue);
+	grid-area: h;
 }
-.css-nav{
-    grid-area: c;
+#css-nav {
+	background-color: var(--green);
+	grid-area: c;
 }
-.js-nav{
-    grid-area: j;
+#js-nav {
+	background-color: var(--orange);
+	grid-area: j;
 }
-.dom-nav{
-    grid-area: d;
+#dom-nav {
+	background-color: var(--yellow);
+	grid-area: d;
 }
-.other-nav{
-    grid-area: o;
+#other-nav {
+	background-color: var(--light-pink);
+	grid-area: o;
 }

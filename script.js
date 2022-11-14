@@ -42,40 +42,40 @@ function makeNavBar() {
 	const otherLink = document.createElement("a");
 
 	// set attributes
-	setLinkAttributes(indexLink, "index-nav", "../index.html", "Home");
+	setLinkAttributes(indexLink, "index-nav", "../index.html", "<p>Home</p>");
 	setLinkAttributes(
 		htmlLink,
 		"html-nav",
 		"../2-html-page/html-page.html",
-		"HTML"
+		"<p>HTML</p>"
 	);
 	setLinkAttributes(
 		cssLink,
 		"css-nav",
 		"../3-css-page/css-page.html",
-		"CSS"
+		"<p>CSS</p>"
 	);
 	setLinkAttributes(
 		jsLink,
 		"js-nav",
 		"../4-javascript-page/javascript-page.html",
-		"JavaScript"
+		"<p>JavaScript</p>"
 	);
 	setLinkAttributes(
 		domLink,
 		"dom-nav",
 		"../5-dom-page/dom-page.html",
-		"DOM"
+		"<p>DOM</p>"
 	);
 	setLinkAttributes(
 		otherLink,
 		"other-nav",
 		"../6-other-page/other-page.html",
-		"Other"
+		"<p>Other</p>"
 	);
 
 	// append <a> elements to <nav> element
-	nav.append(indexLink, htmlLink, cssLink, jsLink, domLink, otherLink)
+	nav.append(indexLink, htmlLink, cssLink, jsLink, domLink, otherLink);
 
 	// // append <a> elements to <li> elements
 	// indexText.append(indexLink);
@@ -114,7 +114,7 @@ makeFooter();
  * @param  {string} text
  */
 function setLinkAttributes(element, elementId, hrefLink, text) {
-	element.id = elementId
+	element.id = elementId;
 	element.href = hrefLink;
-	element.innerText = text;
+	element.innerHTML = text;
 }
