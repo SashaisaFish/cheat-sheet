@@ -46,12 +46,10 @@ function makeNavBar() {
 		"link-btn",
 		"css-bubble",
 	]);
-	jsLink = createLink(
-		jsLink,
-		"js-nav",
-		"../4-javascript-page/javascript-page.html",
-		["link-btn", "js-bubble"]
-	);
+	jsLink = createLink(jsLink, "js-nav", "../4-js-page/js-page.html", [
+		"link-btn",
+		"js-bubble",
+	]);
 	domLink = createLink(domLink, "dom-nav", "../5-dom-page/dom-page.html", [
 		"link-btn",
 		"dom-bubble",
