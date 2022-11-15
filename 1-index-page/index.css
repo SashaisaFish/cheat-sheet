@@ -2,7 +2,8 @@
 
 /* || PRIMARY ELEMENTS */
 header {
-	border-bottom: 1vh solid var(--indigo-border);
+	border-bottom: 8px solid var(--indigo-border);
+	border-radius: 4px;
 }
 main {
 	display: flex;
@@ -11,7 +12,8 @@ main {
 }
 /* || SECONDARY ELEMENTS */
 h1 {
-	border-right: 3px solid var(--indigo-border);
+	border-right: 4px solid var(--indigo-border);
+	border-radius: 2px;
 }
 
 /* || CLASSES */
@@ -19,5 +21,7 @@ h1 {
 /* || FONTS */
 
 /* || GRIDS */
+#headings-grid-container {
+}
 
 /* || OTHER */
