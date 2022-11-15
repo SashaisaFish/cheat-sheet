@@ -15,14 +15,59 @@ h1 {
 	border-right: 4px solid var(--indigo-border);
 	border-radius: 2px;
 }
+h3:hover {
+	flex-grow: 2;
+}
 
 /* || CLASSES */
+.left-grid-btn,
+.right-grid-btn {
+	box-sizing: border-box;
+	display: flex;
+	place-content: center;
+	place-items: center;
+	margin: 1vh 2vw;
+	min-width: 110px;
+	min-height: 10vh;
+	border-radius: 8px;
+	box-shadow: var(--button-shine), var(--drop-shadow);
+}
+.left-grid-btn:hover,
+.left-grid-btn:active {
+	border-left: 6px solid var(--white-grey);
+	flex-grow: 0.8;
+	box-shadow: 0 0 4px var(--white-grey),
+		1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-2px -2px 4px rgba(0, 0, 0, 50%) inset;
+}
+.right-grid-btn:hover,
+.right-grid-btn:active {
+	border-right: 6px solid var(--white-grey);
+	flex-grow: 0.8;
+	box-shadow: 0 0 4px var(--white-grey),
+		1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-1px -2px 4px rgba(0, 0, 0, 50%) inset;
+}
 
 /* || FONTS */
 
 /* || GRIDS */
 #headings-grid-container {
-	display: grid;
+	grid-template-areas:
+		"h c"
+		"j d";
+}
+#html-index-link {
+	grid-area: h;
+}
+#css-index-link {
+	grid-area: c;
+}
+#js-index-link {
+	grid-area: j;
+}
+#dom-index-link {
+	grid-area: d;
 }
 
 /* || OTHER */
