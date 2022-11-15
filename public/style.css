@@ -1,0 +1,157 @@
+/* || IMPORTS */
+@import url("https://unpkg.com/modern-css-reset/dist/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import "./media-queries/phone.css" screen and (max-width: 900px);
+@import "./media-queries/tablet.css" screen and (min-width: 481px) and
+	(max-width: 1024px);
+@import "./media-queries/desktop.css" screen and (min-width: 1025px);
+
+/* || VARIABLES */
+:root {
+	--dark-grey: #40333d;
+	--mid-grey: #5e5363;
+	--light-grey: #918b9a;
+	--white-grey: #cac9d9;
+	--indigo-border: #331a5d;
+	--indigo: #502f97;
+	--light-blue-border: #1c656f;
+	--light-blue: #2ca0a6;
+	--green-border: #236b25;
+	--green: #2e9732;
+	--orange-border: #6d281e;
+	--orange: #bd552b;
+	--yellow-border: #86560d;
+	--yellow: #cba228;
+	--light-pink-border: #7f1a3c;
+	--light-pink: #df326c;
+	--button-shine: 1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-3px -2px 4px rgba(0, 0, 0, 50%) inset;
+	--drop-shadow: 0 1px 4px rgba(0, 0, 0, 60%);
+	--main-text: "Quicksand", Arial, Helvetica, sans-serif;
+	--header-text: "Limelight", Times, serif;
+}
+
+/* || PRIMARY ELEMENTS */
+html {
+	max-width: 100vw;
+	font-family: var(--main-text);
+}
+body {
+	max-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	background-color: var(--dark-grey);
+}
+header {
+	max-width: 100vw;
+	display: grid;
+	text-align: center;
+	align-items: center;
+	margin: 4vh 3.6vw auto;
+	padding: 1vh 0;
+}
+nav {
+	max-width: 100%;
+	font-size: 1.25em;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+footer {
+	text-align: center;
+	color: var(--mid-grey);
+}
+
+/* || SECONDARY ELEMENTS */
+h1 {
+	font-family: var(--header-text);
+	padding: 0 1.5vw 0 0;
+	margin: 3vh auto;
+	/* text-shadow: 0 2px 5px rgba(0, 0, 0, 70%); */
+}
+h2 {
+	font-family: var(--header-text);
+	font-size: 2em;
+}
+/* || a */
+a {
+	text-decoration: none;
+}
+a:link,
+a:visited {
+	color: var(--white-grey);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 70%);
+}
+a:hover,
+a:active {
+	color: var(--white-grey);
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 70%), 0 0px 5px var(--white-grey);
+}
+/* || li */
+li {
+	list-style: none;
+}
+
+/* || CLASSES */
+.header-logo {
+	max-height: 60%;
+	margin: 1vh 1vw;
+	justify-self: flex-start;
+}
+.hidden {
+	display: none;
+}
+.link-btn {
+	box-sizing: border-box;
+	min-width: 110px;
+	border-radius: 10px;
+	box-shadow: var(--button-shine), var(--drop-shadow);
+}
+.link-btn:hover,
+.link-btn:active {
+	border-left: 8px solid var(--white-grey);
+	flex-grow: 0.8;
+	box-shadow: 0 0 4px var(--white-grey), var(--button-shine);
+}
+
+.info-article {
+}
+.info-article-large {
+}
+.info-title {
+}
+.info-entry {
+}
+
+/* || FONTS */
+
+/* || GRIDS */
+
+/* || OTHER */
+
+.index-bubble {
+	background-color: var(--indigo);
+	grid-area: i;
+}
+.html-bubble {
+	background-color: var(--light-blue);
+	grid-area: h;
+}
+.css-bubble {
+	background-color: var(--green);
+	grid-area: c;
+}
+.js-bubble {
+	background-color: var(--orange);
+	grid-area: j;
+}
+.dom-bubble {
+	background-color: var(--yellow);
+	grid-area: d;
+}
+.other-bubble {
+	background-color: var(--light-pink);
+	grid-area: o;
+}

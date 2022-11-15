@@ -1,0 +1,27 @@
+@import "../public/style.css";
+
+/* || PRIMARY ELEMENTS */
+header {
+	border-bottom: 8px solid var(--indigo-border);
+	border-radius: 4px;
+}
+main {
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+}
+/* || SECONDARY ELEMENTS */
+h1 {
+	border-right: 4px solid var(--indigo-border);
+	border-radius: 2px;
+}
+
+/* || CLASSES */
+
+/* || FONTS */
+
+/* || GRIDS */
+#headings-grid-container {
+}
+
+/* || OTHER */
