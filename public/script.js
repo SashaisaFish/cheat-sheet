@@ -2,36 +2,50 @@
 
 // Constants
 const entryContainer = document.getElementById("entry-container");
-const nav = document.querySelector("nav");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
 const footer = document.querySelector("footer");
+
+function makeHeader() {
+	// create link w/ href /index/
+	const headerLink = createLink("header-link", "/index/");
+	// create h1 w/ id main-header and inner text Cheat Sheet
+	const headerText = createElement("h1", "header-text");
+	headerText.innerText = "Cheat Sheet";
+	// append h1 to link
+	headerLink.append(headerText);
+	// append link to header
+	header.append(headerLink);
+
+	// create img with src "../public/logo.svg" and alt "logo"
+	const headerLogo = createImg("header-logo", "../public/logo.svg", "logo", [
+		"header-logo",
+	]);
+	// append img to header
+	header.append(headerLogo);
+
+	// create nav
+	const navElement = document.createElement("nav");
+	// append nav to header
+	header.append(navElement);
+}
+// <a href="/index/"><h1>Cheat Sheet</h1></a>
+// <img src="../public/logo.svg" alt="logo" />
+// <nav></nav>
 
 /**Element: *Nav*
  */
 function makeNavBar() {
-	// declare variables
-	// let indexText;
-	// let indexLink;
-	// let htmlText;
-	// let htmlLink;
-	// let cssText;
-	// let cssLink;
-	// let jsText;
-	// let jsLink;
-	// let domText;
-	// let domLink;
-	// let otherText;
-	// let otherLink;
-
+	const nav = document.querySelector("nav");
 	// create <p> elements
-	const indexText = createP("index-nav-text", "link-text", "Home");
-	const htmlText = createP("html-nav-text", "link-text", "HTML");
-	const cssText = createP("css-nav-text", "link-text", "CSS");
-	const jsText = createP("js-nav-text", "link-text", "JavaScript");
-	const domText = createP("dom-nav-text", "link-text", "DOM");
-	const otherText = createP("other-nav-text", "link-text", "Other");
+	const indexText = createP("index-nav-text", "Home", "link-text");
+	const htmlText = createP("html-nav-text", "HTML", "link-text");
+	const cssText = createP("css-nav-text", "CSS", "link-text");
+	const jsText = createP("js-nav-text", "JavaScript", "link-text");
+	const domText = createP("dom-nav-text", "DOM", "link-text");
+	const otherText = createP("other-nav-text", "Other", "link-text");
 
 	// create <a> elements
-
 	const indexLink = createLink("index-nav", "/index/", [
 		"link-btn",
 		"index-bubble",
@@ -63,7 +77,6 @@ function makeNavBar() {
 /**Element: *Footer*
  */
 function makeFooter() {
-	const footer = document.querySelector("footer");
 	const today = new Date();
 	const year = today.getFullYear();
 	const footerText = document.createElement("p");
@@ -106,29 +119,86 @@ function makeEntry(entryObject) {
 // HELPER FUNCTIONS
 
 /**CREATE LINK ELEMENT
- * @param  {string} elementName
  * @param  {string} elementId
- * @param  {string} hrefLink
+ * @param  {string} elementLink
+ * @param  {string, array} elementClasses (optional)
  */
 function createLink(elementId, elementLink, elementClasses) {
 	const element = document.createElement("a");
 	element.id = elementId;
 	element.href = elementLink;
-	element.classList.add(...elementClasses);
+	if (elementClasses) {
+		if (Array.isArray(elementClasses)) {
+			element.classList.add(...elementClasses);
+		} else {
+			element.classList.add(elementClasses);
+		}
+	}
 	return element;
 }
 /** CREATE P ELEMENT
- * @param  {string} elementName
  * @param  {string} elementId
- * @param  {string} elementClasses
  * @param  {string} text
+ * @param  {string, array} elementClasses (optional)
  */
-function createP(elementId, elementClasses, text) {
+function createP(elementId, text, elementClasses) {
 	const element = document.createElement("p");
 	element.id = elementId;
-	element.classList.add(elementClasses);
 	element.innerText = text;
+	if (elementClasses) {
+		if (Array.isArray(elementClasses)) {
+			element.classList.add(...elementClasses);
+		} else {
+			element.classList.add(elementClasses);
+		}
+	}
+	return element;
+}
+/** CREATE IMAGE ELEMENT
+ * @param  {string} elementId
+ * @param  {url} imgSrc
+ * @param  {string} imgAlt
+ * @param  {string, array} elementClasses (optional)
+ */
+function createImg(elementId, imgSrc, imgAlt, elementClasses) {
+	const element = document.createElement("img");
+	element.id = elementId;
+	element.src = imgSrc;
+	element.alt = imgAlt;
+	if (elementClasses) {
+		if (Array.isArray(elementClasses)) {
+			element.classList.add(...elementClasses);
+		} else {
+			element.classList.add(elementClasses);
+		}
+	}
+	return element;
+}
+/** CREATE ELEMENT OF INPUT TYPE
+ * @param  {string} elementType
+ * @param  {string} elementId
+ * @param  {string} elementClasses (optional)
+ */
+function createElement(elementType, elementId, elementClasses) {
+	const element = document.createElement(elementType);
+	element.id = elementId;
+	if (elementClasses) {
+		if (Array.isArray(elementClasses)) {
+			element.classList.add(...elementClasses);
+		} else {
+			element.classList.add(elementClasses);
+		}
+	}
 	return element;
 }
 
-export { makeEntry, makeNavBar, makeFooter, createLink, createP };
+export {
+	makeHeader,
+	makeNavBar,
+	makeFooter,
+	makeEntry,
+	createLink,
+	createP,
+	createImg,
+	createElement,
+};
