@@ -9,47 +9,41 @@ const footer = document.querySelector("footer");
  */
 function makeNavBar() {
 	// declare variables
-	let indexText;
-	let indexLink;
-	let htmlText;
-	let htmlLink;
-	let cssText;
-	let cssLink;
-	let jsText;
-	let jsLink;
-	let domText;
-	let domLink;
-	let otherText;
-	let otherLink;
+	// let indexText;
+	// let indexLink;
+	// let htmlText;
+	// let htmlLink;
+	// let cssText;
+	// let cssLink;
+	// let jsText;
+	// let jsLink;
+	// let domText;
+	// let domLink;
+	// let otherText;
+	// let otherLink;
 
 	// create <p> elements
-	indexText = createP(indexText, "index-nav-text", "link-text", "Home");
-	htmlText = createP(htmlText, "html-nav-text", "link-text", "HTML");
-	cssText = createP(cssText, "css-nav-text", "link-text", "CSS");
-	jsText = createP(jsText, "js-nav-text", "link-text", "JavaScript");
-	domText = createP(domText, "dom-nav-text", "link-text", "DOM");
-	otherText = createP(otherText, "other-nav-text", "link-text", "Other");
+	const indexText = createP("index-nav-text", "link-text", "Home");
+	const htmlText = createP("html-nav-text", "link-text", "HTML");
+	const cssText = createP("css-nav-text", "link-text", "CSS");
+	const jsText = createP("js-nav-text", "link-text", "JavaScript");
+	const domText = createP("dom-nav-text", "link-text", "DOM");
+	const otherText = createP("other-nav-text", "link-text", "Other");
 
 	// create <a> elements
 
-	indexLink = createLink(indexLink, "index-nav", "/index/", [
+	const indexLink = createLink("index-nav", "/index/", [
 		"link-btn",
 		"index-bubble",
 	]);
-	htmlLink = createLink(htmlLink, "html-nav", "/html/", [
+	const htmlLink = createLink("html-nav", "/html/", [
 		"link-btn",
 		"html-bubble",
 	]);
-	cssLink = createLink(cssLink, "css-nav", "/css/", [
-		"link-btn",
-		"css-bubble",
-	]);
-	jsLink = createLink(jsLink, "js-nav", "/js/", ["link-btn", "js-bubble"]);
-	domLink = createLink(domLink, "dom-nav", "/dom/", [
-		"link-btn",
-		"dom-bubble",
-	]);
-	otherLink = createLink(otherLink, "other-nav", "/other/", [
+	const cssLink = createLink("css-nav", "/css/", ["link-btn", "css-bubble"]);
+	const jsLink = createLink("js-nav", "/js/", ["link-btn", "js-bubble"]);
+	const domLink = createLink("dom-nav", "/dom/", ["link-btn", "dom-bubble"]);
+	const otherLink = createLink("other-nav", "/other/", [
 		"link-btn",
 		"other-bubble",
 	]);
@@ -116,12 +110,12 @@ function makeEntry(entryObject) {
  * @param  {string} elementId
  * @param  {string} hrefLink
  */
-function createLink(elementName, elementId, elementLink, elementClasses) {
-	elementName = document.createElement("a");
-	elementName.id = elementId;
-	elementName.href = elementLink;
-	elementName.classList.add(...elementClasses);
-	return elementName;
+function createLink(elementId, elementLink, elementClasses) {
+	const element = document.createElement("a");
+	element.id = elementId;
+	element.href = elementLink;
+	element.classList.add(...elementClasses);
+	return element;
 }
 /** CREATE P ELEMENT
  * @param  {string} elementName
@@ -129,12 +123,12 @@ function createLink(elementName, elementId, elementLink, elementClasses) {
  * @param  {string} elementClasses
  * @param  {string} text
  */
-function createP(elementName, elementId, elementClasses, text) {
-	elementName = document.createElement("p");
-	elementName.id = elementId;
-	elementName.classList.add(elementClasses);
-	elementName.innerText = text;
-	return elementName;
+function createP(elementId, elementClasses, text) {
+	const element = document.createElement("p");
+	element.id = elementId;
+	element.classList.add(elementClasses);
+	element.innerText = text;
+	return element;
 }
 
 export { makeEntry, makeNavBar, makeFooter, createLink, createP };
