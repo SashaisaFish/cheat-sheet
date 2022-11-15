@@ -1,6 +1,9 @@
 /* @import "../style.css"; */
 /* || LANDSCAPE */
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 1079) and (orientation: landscape) {
+	body {
+		flex-direction: row;
+	}
 	header {
 		max-width: 100%;
 		grid-template-columns: min-content 2fr 3fr;
