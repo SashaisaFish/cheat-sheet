@@ -34,16 +34,16 @@ app.use(
 );
 // dom
 app.use(
-	"/dom",
-	express.static(path.join(__dirname, "5-dom-page"), {
-		index: "dom-page.html",
+	"/react",
+	express.static(path.join(__dirname, "5-react-page"), {
+		index: "react-page.html",
 	})
 );
 // other
 app.use(
-	"/other",
-	express.static(path.join(__dirname, "6-other-page"), {
-		index: "other-page.html",
+	"/create",
+	express.static(path.join(__dirname, "6-create-page"), {
+		index: "create-page.html",
 	})
 );
 

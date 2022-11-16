@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="create-page.css" type="text/css" />
+		<title>Sasha's Coding Cheatsheet</title>
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<section id="create-entry">
+				<h2>Create an Entry</h2>
+				<form action="/create/new-entry" method="post">
+					<!-- input reset -->
+					<input type="reset" value="Clear" />
+					<!-- select: topic -->
+					<select name="topic" id="topic">
+						<option value="html">HTML</option>
+						<option value="css">CSS</option>
+						<option value="js">JavaScript</option>
+						<option value="react">React</option>
+					</select>
+					<!-- input text: subtopic -->
+					<input type="text" name="subtopic" id="subtopic" />
+					<!-- input text: elementId -->
+					<input type="text" name="elementId" id="" />
+					<!-- input text: title -->
+					<input type="text" name="" id="" />
+					<!-- input checkbox: classes -->
+					<!-- input submit -->
+					<input type="submit" value="Submit" />
+				</form>
+			</section>
+			<section id="fill-entry">
+				<h2>Fill an Entry</h2>
+				<section id="fill-btn-container">
+					<h3>Choose</h3>
+					<button id="create-h4-btn">Heading</button>
+					<button id="create-p-btn">Text</button>
+					<button id="create-a-btn">Link</button>
+					<button id="create-img-btn">Image</button>
+				</section>
+				<form
+					action="/create/fill-entry-h4"
+					method="post"
+					class="hidden"
+				>
+					<!-- input reset -->
+					<input type="reset" value="Clear" />
+					<!-- select: parent id (options filled from script with all id's of entries") -->
+					<!-- input text: element id -->
+					<!-- input text: text -->
+					<!-- fieldset -->
+					<!-- legend: classes -->
+					<!-- input checkbox: classes -->
+					<!-- input submit -->
+					<input type="submit" value="Submit" />
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+		<script src="../public/pageMaker.js" type="module"></script>
+		<script src="create-page.js" type="module"></script>
+	</body>
+</html>

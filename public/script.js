@@ -6,6 +6,14 @@ const header = document.querySelector("header");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
 
+function test() {
+	// const testDiv = document.createElement("div")
+	// testDiv.id = "test-div"
+	// testDiv.classList.add([])
+	// main.append(testDiv)
+}
+/**Element: *Header*
+ */
 function makeHeader() {
 	// create link w/ href /index/
 	const headerLink = createLink("header-link", "/index/");
@@ -29,9 +37,7 @@ function makeHeader() {
 	// append nav to header
 	header.append(navElement);
 }
-// <a href="/index/"><h1>Cheat Sheet</h1></a>
-// <img src="../public/logo.svg" alt="logo" />
-// <nav></nav>
+
 
 /**Element: *Nav*
  */
@@ -42,8 +48,8 @@ function makeNavBar() {
 	const htmlText = createP("html-nav-text", "HTML", "link-text");
 	const cssText = createP("css-nav-text", "CSS", "link-text");
 	const jsText = createP("js-nav-text", "JavaScript", "link-text");
-	const domText = createP("dom-nav-text", "DOM", "link-text");
-	const otherText = createP("other-nav-text", "Other", "link-text");
+	const reactText = createP("react-nav-text", "React", "link-text");
+	const createPageText = createP("create-nav-text", "Create", "link-text");
 
 	// create <a> elements
 	const indexLink = createLink("index-nav", "/index/", [
@@ -56,10 +62,13 @@ function makeNavBar() {
 	]);
 	const cssLink = createLink("css-nav", "/css/", ["link-btn", "css-bubble"]);
 	const jsLink = createLink("js-nav", "/js/", ["link-btn", "js-bubble"]);
-	const domLink = createLink("dom-nav", "/dom/", ["link-btn", "dom-bubble"]);
-	const otherLink = createLink("other-nav", "/other/", [
+	const reactLink = createLink("react-nav", "/react/", [
 		"link-btn",
-		"other-bubble",
+		"react-bubble",
+	]);
+	const createPageLink = createLink("create-nav", "/create/", [
+		"link-btn",
+		"create-bubble",
 	]);
 
 	// append <p> elements to <a> elements
@@ -67,11 +76,11 @@ function makeNavBar() {
 	htmlLink.append(htmlText);
 	cssLink.append(cssText);
 	jsLink.append(jsText);
-	domLink.append(domText);
-	otherLink.append(otherText);
+	reactLink.append(reactText);
+	createPageLink.append(createPageText);
 
 	// append <a> elements to <nav> element
-	nav.append(indexLink, htmlLink, cssLink, jsLink, domLink, otherLink);
+	nav.append(indexLink, htmlLink, cssLink, jsLink, reactLink, createPageLink);
 }
 
 /**Element: *Footer*
@@ -193,6 +202,7 @@ function createElement(elementType, elementId, elementClasses) {
 }
 
 export {
+	test,
 	makeHeader,
 	makeNavBar,
 	makeFooter,
