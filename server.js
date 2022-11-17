@@ -1,17 +1,17 @@
 // import express
-const express = require("express");
-const favicon = require("serve-favicon");
-// const seed
-const { seed } = require("./public/db/seed.js");
-// const routes
-const { createRouter } = require("./public/routes/createRouter.js");
+import express from "express";
+import favicon from "serve-favicon";
+// import seed
+import { seed } from "./public/db/seed.js";
+// import routes
+import { createRouter } from "./public/routes/createRouter.js";
 
 // translate __dirname
-const path = require("path");
-// import { fileURLToPath } from "node:url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // create app
 const app = express();

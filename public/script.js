@@ -4,7 +4,7 @@
 // import { pTag } from "./models/pTag.js";
 // import { aTag } from "./models/aTag.js";
 // import { imgTag } from "./models/imgTag.js";
-import { EntryIndex, h4TagIndex, pTagIndex, aTagIndex, imgTagIndex } from "./models/index.js";
+import { Entry, h4Tag, pTag, aTag, imgTag } from "./models/index.js";
 
 // Constants
 const entryContainer = document.getElementById("entry-container");

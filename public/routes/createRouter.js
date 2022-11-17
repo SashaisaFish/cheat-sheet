@@ -1,5 +1,8 @@
-const { Router } = require("express");
-const { Entry, h4Tag, pTag, aTag, imgTag } = require("../models/index.js");
+//imports
+import { Router } from "express";
+import { Entry, h4Tag, pTag, aTag, imgTag } from "../models/index.js";
+
+// set router
 const createRouter = Router();
 
 createRouter.post("/new-entry", async (req, res) => {
@@ -50,4 +53,4 @@ createRouter.post("/fill-entry/img", async (req, res) => {
 	});
 });
 
-module.exports = { createRouter };
+export { createRouter };
