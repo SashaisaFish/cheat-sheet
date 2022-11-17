@@ -3,6 +3,8 @@ import express from "express";
 import favicon from "serve-favicon";
 // import seed
 import { seed } from "./public/data/db/seed.js";
+// import routes
+import {createRouter} from "./routes/createRouter.js"
 
 // translate __dirname
 import path from "node:path";
@@ -58,6 +60,9 @@ app.use(
 		index: "create-page.html",
 	})
 );
+
+// set Routers
+app.use("/create", createRouter)
 
 // endpoint to seed database
 app.get("/seed", async (req, res) => {
