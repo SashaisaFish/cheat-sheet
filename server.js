@@ -5,6 +5,8 @@ import favicon from "serve-favicon";
 import { seed } from "./public/db/seed.js";
 // import routes
 import { createRouter } from "./public/routes/createRouter.js";
+// // import functions
+// import { test, makeHeader, makeNavBar, makeFooter } from "./public/script.js";
 
 // translate __dirname
 import path from "node:path";
@@ -19,8 +21,10 @@ const app = express();
 const port = 5000;
 
 // //middleware
-// function setHeadersFunc(res, path, stat) {
-// 	res.set()
+// function makePage() {
+// 	makeHeader();
+// 	makeNavBar();
+// 	makeFooter();
 // }
 
 // serve favicon

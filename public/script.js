@@ -4,7 +4,7 @@
 // import { pTag } from "./models/pTag.js";
 // import { aTag } from "./models/aTag.js";
 // import { imgTag } from "./models/imgTag.js";
-import { Entry, h4Tag, pTag, aTag, imgTag } from "./models/index.js";
+//import { Entry, h4Tag, pTag, aTag, imgTag } from "./models/index.js";
 
 // Constants
 const entryContainer = document.getElementById("entry-container");
@@ -98,25 +98,25 @@ function makeFooter() {
 	footer.append(footerText);
 }
 
-async function makeEntries(page) {
-	// will act on load on every page
-	// get info from database
-	// entries is an array of all objects in database
-	const entries = await Entry.findAll({
-		where: { topic: page },
-		include: { h4Tag, pTag, aTag, imgTag },
-	});
-	console.log(entries);
-	// loop through each entry to make a dom object for each
-	entries.forEach((entry) => {
-		let element = document.createElement("article");
-		element.id = entry.elementId;
-		element.classList.add("info-article");
-		let elementTitle = document.createElement("h3");
-		elementTitle.classList.add("info-article-title");
-		elementTitle.innerText = entry.title;
-	});
-}
+// async function makeEntries(page) {
+// 	// will act on load on every page
+// 	// get info from database
+// 	// entries is an array of all objects in database
+// 	const entries = await Entry.findAll({
+// 		where: { topic: page },
+// 		include: { h4Tag, pTag, aTag, imgTag },
+// 	});
+// 	console.log(entries);
+// 	// loop through each entry to make a dom object for each
+// 	entries.forEach((entry) => {
+// 		let element = document.createElement("article");
+// 		element.id = entry.elementId;
+// 		element.classList.add("info-article");
+// 		let elementTitle = document.createElement("h3");
+// 		elementTitle.classList.add("info-article-title");
+// 		elementTitle.innerText = entry.title;
+// 	});
+// }
 
 // HELPER FUNCTIONS
 
@@ -199,7 +199,7 @@ export {
 	makeHeader,
 	makeNavBar,
 	makeFooter,
-	makeEntries,
+	//makeEntries,
 	createLink,
 	createP,
 	createImg,
