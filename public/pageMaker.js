@@ -3,7 +3,7 @@ import {
 	makeHeader,
 	makeNavBar,
 	makeFooter,
-	makeEntry,
+	makeEntries,
 	createLink,
 	createP,
 	createImg,

@@ -1,5 +1,5 @@
-import { DataTypes, Model } from "sequelize";
-import { db } from "../db/db.js";
+const { DataTypes, Model } = require("sequelize");
+const { db } = require("../db/db.js");
 
 class Entry extends Model {}
 
@@ -31,4 +31,4 @@ Entry.init(
 	}
 );
 
-export { Entry };
+module.exports = { Entry };

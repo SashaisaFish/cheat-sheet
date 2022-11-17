@@ -1,5 +1,5 @@
-import { DataTypes, Model } from "sequelize";
-import { db } from "../db/db.js";
+const { DataTypes, Model } = require("sequelize");
+const { db } = require("../db/db.js");
 
 class h4Tag extends Model {}
 h4Tag.init(
@@ -117,4 +117,4 @@ imgTag.init(
 	}
 );
 
-export { h4Tag, pTag, aTag, imgTag };
+module.exports = { h4Tag, pTag, aTag, imgTag };

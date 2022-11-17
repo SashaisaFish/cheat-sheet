@@ -1,3 +1,12 @@
+// imports
+import {
+	Entry,
+	h4Tag,
+	pTag,
+	aTag,
+	imgTag,
+} from "../public/data/models/index.js";
+
 // main script will be enacted across all pages
 
 // Constants
@@ -37,7 +46,6 @@ function makeHeader() {
 	// append nav to header
 	header.append(navElement);
 }
-
 
 /**Element: *Nav*
  */
@@ -93,39 +101,59 @@ function makeFooter() {
 	footer.append(footerText);
 }
 
-function makeEntry(entryObject) {
-	//declare constants
-	const elementId = entryObject["elementId"];
-	const entryTitleText = entryObject["title"];
-	const entryHtml = entryObject["entry"];
+// function makeEntry(entryObject) {
+// 	//declare constants
+// 	const elementId = entryObject["elementId"];
+// 	const entryTitleText = entryObject["title"];
+// 	const entryHtml = entryObject["entry"];
 
-	// create article
-	const fullEntry = document.createElement("article");
-	// add attributes
-	fullEntry.id = elementId;
-	fullEntry.classList.add("info-article");
-	// append to entryContainer
-	entryContainer.append(fullEntry);
+// 	// create article
+// 	const fullEntry = document.createElement("article");
+// 	// add attributes
+// 	fullEntry.id = elementId;
+// 	fullEntry.classList.add("info-article");
+// 	// append to entryContainer
+// 	entryContainer.append(fullEntry);
 
-	// create title
-	const entryTitle = document.createElement("h3");
-	// add attributes
-	entryTitle.innerText = entryTitleText;
-	entryTitle.classList.add("info-title");
-	// append to fullEntry
-	fullEntry.append(entryTitle);
+// 	// create title
+// 	const entryTitle = document.createElement("h3");
+// 	// add attributes
+// 	entryTitle.innerText = entryTitleText;
+// 	entryTitle.classList.add("info-title");
+// 	// append to fullEntry
+// 	fullEntry.append(entryTitle);
 
-	//create inner entry
-	const innerEntry = document.createElement("section");
-	// add attributes
-	innerEntry.id = `${elementId}-entry`;
-	innerEntry.classList.add("info-entry", "hidden");
-	innerEntry.innerHTML = entryHtml;
-	// append to fullEntry
-	fullEntry.append(innerEntry);
-}
+// 	//create inner entry
+// 	const innerEntry = document.createElement("section");
+// 	// add attributes
+// 	innerEntry.id = `${elementId}-entry`;
+// 	innerEntry.classList.add("info-entry", "hidden");
+// 	innerEntry.innerHTML = entryHtml;
+// 	// append to fullEntry
+// 	fullEntry.append(innerEntry);
+// }
 
 // HELPER FUNCTIONS
+
+async function makeEntries(page) {
+	// will act on load on every page
+	// get info from database
+	// entries is an array of all objects in database
+	const entries = await Entry.findAll({
+		where: { topic: page },
+		include: { h4Tag, pTag, aTag, imgTag },
+	});
+	console.log(entries);
+	// loop through each entry to make a dom object for each
+	entries.forEach((entry) => {
+		let element = document.createElement("article");
+		element.id = entry.elementId;
+		element.classList.add("info-article");
+		let elementTitle = document.createElement("h3");
+		elementTitle.classList.add("info-article-title");
+		elementTitle.innerText = entry.title;
+	});
+}
 
 /**CREATE LINK ELEMENT
  * @param  {string} elementId
@@ -206,7 +234,7 @@ export {
 	makeHeader,
 	makeNavBar,
 	makeFooter,
-	makeEntry,
+	makeEntries,
 	createLink,
 	createP,
 	createImg,

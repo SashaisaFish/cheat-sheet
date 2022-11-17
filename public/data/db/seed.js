@@ -1,5 +1,5 @@
-import { Entry, h4Tag, pTag, aTag, imgTag } from "../models/index.js";
-import { db } from "../db/db.js";
+const { Entry, h4Tag, pTag, aTag, imgTag } = require("../models/index.js");
+const { db } = require("../db/db.js");
 
 async function seed() {
 	await db.sync({ force: true });
@@ -25,4 +25,4 @@ async function seed() {
 	});
 }
 
-export { seed };
+module.exports = { seed };

@@ -1,17 +1,17 @@
 // import express
-import express from "express";
-import favicon from "serve-favicon";
-// import seed
-import { seed } from "./public/data/db/seed.js";
-// import routes
-import {createRouter} from "./routes/createRouter.js"
+const express = require("express");
+const favicon = require("serve-favicon");
+// const seed
+const { seed } = require("./public/data/db/seed.js");
+// const routes
+const { createRouter } = require("./public/routes/createRouter.js");
 
 // translate __dirname
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+const path = require("path");
+// import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 // create app
 const app = express();
@@ -27,6 +27,9 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 // serve static webpages
 // index
 app.use("/index", express.static(path.join(__dirname, "1-index-page")));
+app.get("/", (req, res) => {
+	res.redirect("/index");
+});
 // html
 app.use(
 	"/html",
@@ -62,7 +65,7 @@ app.use(
 );
 
 // set Routers
-app.use("/create", createRouter)
+app.use("/create", createRouter);
 
 // endpoint to seed database
 app.get("/seed", async (req, res) => {
