@@ -4,6 +4,11 @@ import { db } from "../db/db.js";
 class h4Tag extends Model {}
 h4Tag.init(
 	{
+		parentId: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
 		elementId: {
 			type: DataTypes.STRING,
 			unique: true,
@@ -26,6 +31,11 @@ h4Tag.init(
 class pTag extends Model {}
 pTag.init(
 	{
+		parentId: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
 		elementId: {
 			type: DataTypes.STRING,
 			unique: true,
@@ -48,6 +58,11 @@ pTag.init(
 class aTag extends Model {}
 aTag.init(
 	{
+		parentId: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
 		elementId: {
 			type: DataTypes.STRING,
 			unique: true,
@@ -74,6 +89,11 @@ aTag.init(
 class imgTag extends Model {}
 imgTag.init(
 	{
+		parentId: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
 		elementId: {
 			type: DataTypes.STRING,
 			unique: true,
