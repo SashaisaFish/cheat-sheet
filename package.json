@@ -33,6 +33,7 @@
 	"dependencies": {
 		"express": "^4.18.2",
 		"sequelize": "^6.25.6",
+		"serve-favicon": "^2.5.0",
 		"sqlite3": "^5.1.2"
 	}
 }

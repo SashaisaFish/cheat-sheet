@@ -1,5 +1,6 @@
 // import express
 import express from "express";
+import favicon from "serve-favicon";
 // import seed
 import { seed } from "./public/data/db/seed.js";
 
@@ -14,6 +15,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 // declare port
 const port = 5000;
+
+// serve favicon
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
