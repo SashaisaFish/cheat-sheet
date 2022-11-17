@@ -3,7 +3,6 @@ import { h4Tag } from "./h4Tag.js";
 import { pTag } from "./pTag.js";
 import { aTag } from "./aTag.js";
 import { imgTag } from "./imgTag.js";
-// const { h4Tag, pTag, aTag, imgTag } = require("./entryTags.js");
 
 Entry.hasMany(h4Tag);
 h4Tag.belongsTo(Entry);

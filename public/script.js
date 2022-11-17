@@ -1,11 +1,3 @@
-// imports
-// import { Entry } from "./models/entry.js";
-// import { h4Tag } from "./models/h4Tag.js";
-// import { pTag } from "./models/pTag.js";
-// import { aTag } from "./models/aTag.js";
-// import { imgTag } from "./models/imgTag.js";
-//import { Entry, h4Tag, pTag, aTag, imgTag } from "./models/index.js";
-
 // Constants
 const entryContainer = document.getElementById("entry-container");
 const header = document.querySelector("header");

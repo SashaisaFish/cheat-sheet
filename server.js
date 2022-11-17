@@ -2,11 +2,9 @@
 import express from "express";
 import favicon from "serve-favicon";
 // import seed
-import { seed } from "./public/db/seed.js";
+import { seed } from "./src/db/seed.js";
 // import routes
-import { createRouter } from "./public/routes/createRouter.js";
-// // import functions
-// import { test, makeHeader, makeNavBar, makeFooter } from "./public/script.js";
+import { createRouter } from "./src/routes/createRouter.js";
 
 // translate __dirname
 import path from "node:path";
@@ -20,23 +18,12 @@ const app = express();
 // declare port
 const port = 5000;
 
-// //middleware
-// function makePage() {
-// 	makeHeader();
-// 	makeNavBar();
-// 	makeFooter();
-// }
-
 // serve favicon
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-// app.use(
-// 	"/public/models",
-// 	express.static(path.join(__dirname, "public", "models"), {setHeaders: })
-// );
 
 // serve static webpages
 // index
