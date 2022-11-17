@@ -1,7 +1,15 @@
 // import express
-const express = require("express");
-// import path
-const path = require("path");
+import express from "express";
+// import seed
+import { seed } from "./public/data/db/seed.js";
+
+// translate __dirname
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // create app
 const app = express();
 // declare port
@@ -46,6 +54,12 @@ app.use(
 		index: "create-page.html",
 	})
 );
+
+// endpoint to seed database
+app.get("/seed", async (req, res) => {
+	await seed();
+	res.status(201).send("Database reset!");
+});
 
 // listen
 app.listen(port, () => {

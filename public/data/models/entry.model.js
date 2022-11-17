@@ -1,12 +1,12 @@
-import {DataTypes, Model} from 'sequelize'
-import {db} from '../db/db'
+import { DataTypes, Model } from "sequelize";
+import { db } from "../db/db.js";
 
 class Entry extends Model {}
 
 Entry.init(
 	{
 		topic: {
-			type: DataTypes.ENUM(html, css, js, react),
+			type: DataTypes.ENUM("html", "css", "js", "react"),
 			allowNull: false,
 		},
 		subtopic: {
@@ -22,14 +22,13 @@ Entry.init(
 			allowNull: false,
 		},
 		classes: {
-            type: DataTypes.STRING,
-            defaultValue: ["info-article"]
-        },
+			type: DataTypes.STRING,
+			defaultValue: "info-article",
+		},
 	},
 	{
 		sequelize: db,
 	}
 );
 
-export {Entry}
-
+export { Entry };

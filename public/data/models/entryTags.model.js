@@ -1,36 +1,11 @@
 import { DataTypes, Model } from "sequelize";
-import { db } from "../db/db";
+import { db } from "../db/db.js";
 
 class h4Tag extends Model {}
 h4Tag.init(
-    {
-        elementId: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        text: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        classes: {
-            type: DataTypes.ARRAY,
-            defaultValue: ["info-entry"]
-        }
-
-    },
-    {
-        sequelize: db,
-        timestamps: false
-    }
-)
-
-class pTag extends Model {}
-pTag.init(
 	{
 		elementId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
 		},
 		text: {
@@ -38,8 +13,30 @@ pTag.init(
 			allowNull: false,
 		},
 		classes: {
-			type: DataTypes.ARRAY,
-			defaultValue: ["info-entry"],
+			type: DataTypes.STRING,
+			defaultValue: "info-entry",
+		},
+	},
+	{
+		sequelize: db,
+		timestamps: false,
+	}
+);
+
+class pTag extends Model {}
+pTag.init(
+	{
+		elementId: {
+			type: DataTypes.STRING,
+			unique: true,
+		},
+		text: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		classes: {
+			type: DataTypes.STRING,
+			defaultValue: "info-entry",
 		},
 	},
 	{
@@ -53,17 +50,19 @@ aTag.init(
 	{
 		elementId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
 		},
 		href: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		innerHtml: {},
+		innerHtml: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
 		classes: {
-			type: DataTypes.ARRAY,
-			defaultValue: ["info-entry"],
+			type: DataTypes.STRING,
+			defaultValue: "info-entry",
 		},
 	},
 	{
@@ -77,7 +76,6 @@ imgTag.init(
 	{
 		elementId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
 		},
 		src: {
@@ -89,8 +87,8 @@ imgTag.init(
 			allowNull: false,
 		},
 		classes: {
-			type: DataTypes.ARRAY,
-			defaultValue: ["info-entry"],
+			type: DataTypes.STRING,
+			defaultValue: "info-entry",
 		},
 	},
 	{
@@ -99,4 +97,4 @@ imgTag.init(
 	}
 );
 
-export {h4Tag, pTag, aTag, imgTag}
+export { h4Tag, pTag, aTag, imgTag };

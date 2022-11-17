@@ -1,5 +1,5 @@
-import {Entry} from './entry.model'
-import {h4Tag, pTag, aTag, imgTag} from './entryTags.model'
+import { Entry } from "./entry.model.js";
+import { h4Tag, pTag, aTag, imgTag } from "./entryTags.model.js";
 
 Entry.hasMany(h4Tag);
 h4Tag.belongsTo(Entry);
@@ -13,4 +13,4 @@ aTag.belongsTo(Entry);
 Entry.hasMany(imgTag);
 imgTag.belongsTo(Entry);
 
-export {Entry, h4Tag, pTag, aTag, imgTag}
+export { Entry, h4Tag, pTag, aTag, imgTag };

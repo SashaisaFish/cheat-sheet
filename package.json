@@ -23,6 +23,7 @@
 		"test:all": "jest",
 		"test:coverage": "jest --collect-coverage"
 	},
+	"type": "module",
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {

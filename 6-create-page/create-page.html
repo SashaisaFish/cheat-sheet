@@ -13,26 +13,24 @@
 			<section id="create-entry">
 				<h2>Create an Entry</h2>
 				<form action="/create/new-entry" method="post">
-					<!-- input reset -->
 					<input type="reset" value="Clear" />
-					<!-- select: topic -->
 					<select name="topic" id="topic">
 						<option value="html">HTML</option>
 						<option value="css">CSS</option>
 						<option value="js">JavaScript</option>
 						<option value="react">React</option>
 					</select>
-					<!-- input text: subtopic -->
 					<input type="text" name="subtopic" id="subtopic" />
-					<!-- input text: elementId -->
-					<input type="text" name="elementId" id="" />
-					<!-- input text: title -->
-					<input type="text" name="" id="" />
-					<!-- input checkbox: classes -->
-					<!-- input submit -->
+					<input
+						type="text"
+						name="entryElementId"
+						id="entryElementId"
+					/>
+					<input type="text" name="entryTitle" id="entryTitle" />
 					<input type="submit" value="Submit" />
 				</form>
 			</section>
+
 			<section id="fill-entry">
 				<h2>Fill an Entry</h2>
 				<section id="fill-btn-container">
@@ -42,20 +40,50 @@
 					<button id="create-a-btn">Link</button>
 					<button id="create-img-btn">Image</button>
 				</section>
-				<form
-					action="/create/fill-entry-h4"
-					method="post"
-					class="hidden"
-				>
-					<!-- input reset -->
+				<form action="/create/fill-entry" method="post" class="hidden">
 					<input type="reset" value="Clear" />
-					<!-- select: parent id (options filled from script with all id's of entries") -->
-					<!-- input text: element id -->
-					<!-- input text: text -->
-					<!-- fieldset -->
-					<!-- legend: classes -->
-					<!-- input checkbox: classes -->
-					<!-- input submit -->
+					<input type="hidden" name="h4Tag" id="h4Tag" value="h4" />
+					<select name="h4ParentId" id="h4ParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="h4ElementId" id="h4ElementId" />
+					<input type="text" name="h4Text" id="h4Text" />
+					</fieldset>
+					<input type="submit" value="Submit" />
+				</form>
+				<form action="/create/fill-entry" method="post" class="hidden">
+					<input type="reset" value="Clear" />
+					<input type="hidden" name="pTag" id="pTag" value="p" />
+					<select name="pParentId" id="pParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="pElementId" id="pElementId" />
+					<input type="text" name="pText" id="pText" />
+					<input type="submit" value="Submit" />
+				</form>
+				<form action="/create/fill-entry" method="post" class="hidden">
+					<input type="reset" value="Clear" />
+					<input type="hidden" name="aTag" id="aTag" value="a" />
+					<select name="aParentId" id="aParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="aElementId" id="aElementId" />
+					<input type="text" name="aText" id="aText" />
+					<input type="submit" value="Submit" />
+				</form>
+				<form action="/create/fill-entry" method="post" class="hidden">
+					<input type="reset" value="Clear" />
+					<input
+						type="hidden"
+						name="imgTag"
+						id="imgTag"
+						value="img"
+					/>
+					<select name="imgParentId" id="imgParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="imgElementId" id="imgElementId" />
+					<input type="text" name="imgText" id="imgText" />
 					<input type="submit" value="Submit" />
 				</form>
 			</section>
