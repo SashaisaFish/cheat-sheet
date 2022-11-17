@@ -1,5 +1,9 @@
-const { Entry } = require("./entry.model.js");
-const { h4Tag, pTag, aTag, imgTag } = require("./entryTags.model.js");
+import { Entry } from "./entry.js";
+import { h4Tag } from "./h4Tag.js";
+import { pTag } from "./pTag.js";
+import { aTag } from "./aTag.js";
+import { imgTag } from "./imgTag.js";
+// const { h4Tag, pTag, aTag, imgTag } = require("./entryTags.js");
 
 Entry.hasMany(h4Tag);
 h4Tag.belongsTo(Entry);
@@ -13,4 +17,4 @@ aTag.belongsTo(Entry);
 Entry.hasMany(imgTag);
 imgTag.belongsTo(Entry);
 
-module.exports = [Entry, h4Tag, pTag, aTag, imgTag];
+export { Entry, h4Tag, pTag, aTag, imgTag };

@@ -18,16 +18,21 @@ const app = express();
 // declare port
 const port = 5000;
 
+// //middleware
+// function setHeadersFunc(res, path, stat) {
+// 	res.set()
+// }
+
 // serve favicon
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-app.use(
-	"/public/models",
-	express.static(path.join(__dirname, "public", "models"))
-);
+// app.use(
+// 	"/public/models",
+// 	express.static(path.join(__dirname, "public", "models"), {setHeaders: })
+// );
 
 // serve static webpages
 // index
