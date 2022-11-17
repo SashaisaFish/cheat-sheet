@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { Entry, h4Tag, pTag, aTag, imgTag } = require("../data/models/index.js");
+const { Entry, h4Tag, pTag, aTag, imgTag } = require("../models/index.js");
 const createRouter = Router();
 
 createRouter.post("/new-entry", async (req, res) => {

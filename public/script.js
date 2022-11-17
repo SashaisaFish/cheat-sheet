@@ -1,13 +1,6 @@
 // imports
-import {
-	Entry,
-	h4Tag,
-	pTag,
-	aTag,
-	imgTag,
-} from "../public/data/models/index.js";
-
-// main script will be enacted across all pages
+import { Entry } from "../public/models/entry.model";
+import { h4Tag, pTag, aTag, imgTag } from "../public/models/entryTags.model";
 
 // Constants
 const entryContainer = document.getElementById("entry-container");
@@ -101,40 +94,6 @@ function makeFooter() {
 	footer.append(footerText);
 }
 
-// function makeEntry(entryObject) {
-// 	//declare constants
-// 	const elementId = entryObject["elementId"];
-// 	const entryTitleText = entryObject["title"];
-// 	const entryHtml = entryObject["entry"];
-
-// 	// create article
-// 	const fullEntry = document.createElement("article");
-// 	// add attributes
-// 	fullEntry.id = elementId;
-// 	fullEntry.classList.add("info-article");
-// 	// append to entryContainer
-// 	entryContainer.append(fullEntry);
-
-// 	// create title
-// 	const entryTitle = document.createElement("h3");
-// 	// add attributes
-// 	entryTitle.innerText = entryTitleText;
-// 	entryTitle.classList.add("info-title");
-// 	// append to fullEntry
-// 	fullEntry.append(entryTitle);
-
-// 	//create inner entry
-// 	const innerEntry = document.createElement("section");
-// 	// add attributes
-// 	innerEntry.id = `${elementId}-entry`;
-// 	innerEntry.classList.add("info-entry", "hidden");
-// 	innerEntry.innerHTML = entryHtml;
-// 	// append to fullEntry
-// 	fullEntry.append(innerEntry);
-// }
-
-// HELPER FUNCTIONS
-
 async function makeEntries(page) {
 	// will act on load on every page
 	// get info from database
@@ -154,6 +113,8 @@ async function makeEntries(page) {
 		elementTitle.innerText = entry.title;
 	});
 }
+
+// HELPER FUNCTIONS
 
 /**CREATE LINK ELEMENT
  * @param  {string} elementId

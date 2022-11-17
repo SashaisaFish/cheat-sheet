@@ -2,7 +2,7 @@
 const express = require("express");
 const favicon = require("serve-favicon");
 // const seed
-const { seed } = require("./public/data/db/seed.js");
+const { seed } = require("./public/db/seed.js");
 // const routes
 const { createRouter } = require("./public/routes/createRouter.js");
 
@@ -23,6 +23,11 @@ app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
+
+app.use(
+	"/public/models",
+	express.static(path.join(__dirname, "public", "models"))
+);
 
 // serve static webpages
 // index

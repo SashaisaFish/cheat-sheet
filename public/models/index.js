@@ -13,4 +13,4 @@ aTag.belongsTo(Entry);
 Entry.hasMany(imgTag);
 imgTag.belongsTo(Entry);
 
-module.exports = { Entry, h4Tag, pTag, aTag, imgTag };
+module.exports = [Entry, h4Tag, pTag, aTag, imgTag];
