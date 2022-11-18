@@ -8,6 +8,7 @@
 	},
 	"scripts": {
 		"start": "nodemon server.js",
+		"sanity": "cd sanity-project && npx @sanity/cli start",
 		"test:index": "jest ./tests/index-page --verbose",
 		"test:watch:index": "jest ./tests/index-page --watch-all --verbose",
 		"test:html": "jest ./tests/html-page --verbose",

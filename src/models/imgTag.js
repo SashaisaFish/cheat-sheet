@@ -1,15 +1,18 @@
 import { DataTypes, Model } from "sequelize";
 import { db } from "../db/db.js";
 
-class imgTag extends Model {}
-imgTag.init(
+class ImgTag extends Model {}
+ImgTag.init(
 	{
 		parentId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
+			references: {
+				model: "Entries",
+				key: "elementId",
+			},
 		},
-		elementId: {
+		childId: {
 			type: DataTypes.STRING,
 			unique: true,
 		},
@@ -32,4 +35,4 @@ imgTag.init(
 	}
 );
 
-export { imgTag };
+export { ImgTag };

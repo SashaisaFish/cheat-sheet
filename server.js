@@ -18,12 +18,15 @@ const app = express();
 // declare port
 const port = 5000;
 
+// parse requests in json and encoded url
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
 // serve favicon
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
-
 
 // serve static webpages
 // index

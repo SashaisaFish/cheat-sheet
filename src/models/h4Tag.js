@@ -1,15 +1,18 @@
 import { DataTypes, Model } from "sequelize";
 import { db } from "../db/db.js";
 
-class h4Tag extends Model {}
-h4Tag.init(
+class H4Tag extends Model {}
+H4Tag.init(
 	{
 		parentId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
+			references: {
+				model: "Entries",
+				key: "elementId",
+			},
 		},
-		elementId: {
+		childId: {
 			type: DataTypes.STRING,
 			unique: true,
 		},
@@ -28,4 +31,4 @@ h4Tag.init(
 	}
 );
 
-export { h4Tag };
+export { H4Tag };

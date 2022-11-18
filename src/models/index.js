@@ -1,19 +1,31 @@
 import { Entry } from "./entry.js";
-import { h4Tag } from "./h4Tag.js";
-import { pTag } from "./pTag.js";
-import { aTag } from "./aTag.js";
-import { imgTag } from "./imgTag.js";
+import { H4Tag } from "./h4Tag.js";
+import { PTag } from "./pTag.js";
+import { ATag } from "./aTag.js";
+import { ImgTag } from "./imgTag.js";
 
-Entry.hasMany(h4Tag);
-h4Tag.belongsTo(Entry);
+Entry.hasMany(H4Tag, {
+	foreignKey: "parentId",
+	sourceKey: "elementId",
+});
+H4Tag.belongsTo(Entry);
 
-Entry.hasMany(pTag);
-pTag.belongsTo(Entry);
+Entry.hasMany(PTag, {
+	foreignKey: "parentId",
+	sourceKey: "elementId",
+});
+PTag.belongsTo(Entry);
 
-Entry.hasMany(aTag);
-aTag.belongsTo(Entry);
+Entry.hasMany(ATag, {
+	foreignKey: "parentId",
+	sourceKey: "elementId",
+});
+ATag.belongsTo(Entry);
 
-Entry.hasMany(imgTag);
-imgTag.belongsTo(Entry);
+Entry.hasMany(ImgTag, {
+	foreignKey: "parentId",
+	sourceKey: "elementId",
+});
+ImgTag.belongsTo(Entry);
 
-export { Entry, h4Tag, pTag, aTag, imgTag };
+export { Entry, H4Tag, PTag, ATag, ImgTag };

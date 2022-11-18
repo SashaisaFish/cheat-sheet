@@ -1,15 +1,18 @@
 import { DataTypes, Model } from "sequelize";
 import { db } from "../db/db.js";
 
-class pTag extends Model {}
-pTag.init(
+class PTag extends Model {}
+PTag.init(
 	{
 		parentId: {
 			type: DataTypes.STRING,
-			allowNull: false,
 			unique: true,
+			references: {
+				model: "Entries",
+				key: "elementId",
+			},
 		},
-		elementId: {
+		childId: {
 			type: DataTypes.STRING,
 			unique: true,
 		},
@@ -28,4 +31,4 @@ pTag.init(
 	}
 );
 
-export { pTag };
+export { PTag };
