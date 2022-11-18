@@ -5,6 +5,10 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import Entry from "./entry";
+import H4Tag from "./H4Tag";
+import PTag from "./PTag";
+import ATag from "./ATag";
+import ImgTag from "./ImgTag";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -12,5 +16,5 @@ export default createSchema({
 	name: "default",
 	// Then proceed to concatenate our document type
 	// to the ones provided by any plugins that are installed
-	types: schemaTypes.concat([Entry]),
+	types: schemaTypes.concat([Entry, H4Tag, PTag, ATag, ImgTag]),
 });
