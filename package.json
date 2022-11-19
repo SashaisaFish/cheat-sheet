@@ -8,6 +8,7 @@
 	},
 	"scripts": {
 		"start": "nodemon server.js",
+		"sanity": "cd sanity-project && npx @sanity/cli start",
 		"test:index": "jest ./tests/index-page --verbose",
 		"test:watch:index": "jest ./tests/index-page --watch-all --verbose",
 		"test:html": "jest ./tests/html-page --verbose",
@@ -23,6 +24,7 @@
 		"test:all": "jest",
 		"test:coverage": "jest --collect-coverage"
 	},
+	"type": "module",
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
@@ -30,6 +32,9 @@
 		"nodemon": "^2.0.20"
 	},
 	"dependencies": {
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"sequelize": "^6.25.6",
+		"serve-favicon": "^2.5.0",
+		"sqlite3": "^5.1.2"
 	}
 }

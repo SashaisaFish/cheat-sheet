@@ -1,11 +1,17 @@
-// main script will be enacted across all pages
-
 // Constants
 const entryContainer = document.getElementById("entry-container");
 const header = document.querySelector("header");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
 
+function test() {
+	// const testDiv = document.createElement("div")
+	// testDiv.id = "test-div"
+	// testDiv.classList.add([])
+	// main.append(testDiv)
+}
+/**Element: *Header*
+ */
 function makeHeader() {
 	// create link w/ href /index/
 	const headerLink = createLink("header-link", "/index/");
@@ -29,9 +35,6 @@ function makeHeader() {
 	// append nav to header
 	header.append(navElement);
 }
-// <a href="/index/"><h1>Cheat Sheet</h1></a>
-// <img src="../public/logo.svg" alt="logo" />
-// <nav></nav>
 
 /**Element: *Nav*
  */
@@ -42,8 +45,8 @@ function makeNavBar() {
 	const htmlText = createP("html-nav-text", "HTML", "link-text");
 	const cssText = createP("css-nav-text", "CSS", "link-text");
 	const jsText = createP("js-nav-text", "JavaScript", "link-text");
-	const domText = createP("dom-nav-text", "DOM", "link-text");
-	const otherText = createP("other-nav-text", "Other", "link-text");
+	const reactText = createP("react-nav-text", "React", "link-text");
+	const createPageText = createP("create-nav-text", "Create", "link-text");
 
 	// create <a> elements
 	const indexLink = createLink("index-nav", "/index/", [
@@ -56,10 +59,13 @@ function makeNavBar() {
 	]);
 	const cssLink = createLink("css-nav", "/css/", ["link-btn", "css-bubble"]);
 	const jsLink = createLink("js-nav", "/js/", ["link-btn", "js-bubble"]);
-	const domLink = createLink("dom-nav", "/dom/", ["link-btn", "dom-bubble"]);
-	const otherLink = createLink("other-nav", "/other/", [
+	const reactLink = createLink("react-nav", "/react/", [
 		"link-btn",
-		"other-bubble",
+		"react-bubble",
+	]);
+	const createPageLink = createLink("create-nav", "/create/", [
+		"link-btn",
+		"create-bubble",
 	]);
 
 	// append <p> elements to <a> elements
@@ -67,11 +73,11 @@ function makeNavBar() {
 	htmlLink.append(htmlText);
 	cssLink.append(cssText);
 	jsLink.append(jsText);
-	domLink.append(domText);
-	otherLink.append(otherText);
+	reactLink.append(reactText);
+	createPageLink.append(createPageText);
 
 	// append <a> elements to <nav> element
-	nav.append(indexLink, htmlLink, cssLink, jsLink, domLink, otherLink);
+	nav.append(indexLink, htmlLink, cssLink, jsLink, reactLink, createPageLink);
 }
 
 /**Element: *Footer*
@@ -84,37 +90,25 @@ function makeFooter() {
 	footer.append(footerText);
 }
 
-function makeEntry(entryObject) {
-	//declare constants
-	const elementId = entryObject["elementId"];
-	const entryTitleText = entryObject["title"];
-	const entryHtml = entryObject["entry"];
-
-	// create article
-	const fullEntry = document.createElement("article");
-	// add attributes
-	fullEntry.id = elementId;
-	fullEntry.classList.add("info-article");
-	// append to entryContainer
-	entryContainer.append(fullEntry);
-
-	// create title
-	const entryTitle = document.createElement("h3");
-	// add attributes
-	entryTitle.innerText = entryTitleText;
-	entryTitle.classList.add("info-title");
-	// append to fullEntry
-	fullEntry.append(entryTitle);
-
-	//create inner entry
-	const innerEntry = document.createElement("section");
-	// add attributes
-	innerEntry.id = `${elementId}-entry`;
-	innerEntry.classList.add("info-entry", "hidden");
-	innerEntry.innerHTML = entryHtml;
-	// append to fullEntry
-	fullEntry.append(innerEntry);
-}
+// async function makeEntries(page) {
+// 	// will act on load on every page
+// 	// get info from database
+// 	// entries is an array of all objects in database
+// 	const entries = await Entry.findAll({
+// 		where: { topic: page },
+// 		include: { h4Tag, pTag, aTag, imgTag },
+// 	});
+// 	console.log(entries);
+// 	// loop through each entry to make a dom object for each
+// 	entries.forEach((entry) => {
+// 		let element = document.createElement("article");
+// 		element.id = entry.elementId;
+// 		element.classList.add("info-article");
+// 		let elementTitle = document.createElement("h3");
+// 		elementTitle.classList.add("info-article-title");
+// 		elementTitle.innerText = entry.title;
+// 	});
+// }
 
 // HELPER FUNCTIONS
 
@@ -193,10 +187,11 @@ function createElement(elementType, elementId, elementClasses) {
 }
 
 export {
+	test,
 	makeHeader,
 	makeNavBar,
 	makeFooter,
-	makeEntry,
+	//makeEntries,
 	createLink,
 	createP,
 	createImg,

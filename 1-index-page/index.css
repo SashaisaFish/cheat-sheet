@@ -1,4 +1,7 @@
 @import "../public/style.css";
+@import "../public/media-queries/phone.css" screen and (max-width: 1079px);
+@import "../public/media-queries/tablet.css" screen and (min-width: 481px) and
+	(max-width: 1023px);
 
 /* || PRIMARY ELEMENTS */
 header {
@@ -6,9 +9,8 @@ header {
 	border-radius: 4px;
 }
 main {
-	display: flex;
-	text-align: center;
-	flex-direction: column;
+	width: 65vw;
+	min-height: 325px;
 }
 /* || SECONDARY ELEMENTS */
 h1 {
@@ -17,11 +19,63 @@ h1 {
 }
 
 /* || CLASSES */
+.grid-wrapper {
+	flex-grow: 1;
+	height: 80%;
+	width: 100%;
+	place-self: center;
+	place-items: stretch;
+	place-content: stretch;
+}
+.left-grid-btn,
+.right-grid-btn {
+	box-sizing: border-box;
+	display: flex;
+	place-content: center;
+	place-items: center;
+	margin: 3vh 2vw;
+	min-width: 110px;
+	min-height: 10vh;
+	border-radius: 8px;
+	box-shadow: var(--button-shine), var(--drop-shadow);
+	font-size: 1.2em;
+}
+.left-grid-btn:hover,
+.left-grid-btn:active {
+	border-left: 6px solid var(--white-grey);
+	flex-grow: 0.8;
+	box-shadow: 0 0 4px var(--white-grey),
+		1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-2px -2px 4px rgba(0, 0, 0, 50%) inset;
+}
+.right-grid-btn:hover,
+.right-grid-btn:active {
+	border-right: 6px solid var(--white-grey);
+	flex-grow: 0.8;
+	box-shadow: 0 0 4px var(--white-grey),
+		1px 2px 3px rgba(255, 255, 255, 40%) inset,
+		-1px -2px 4px rgba(0, 0, 0, 50%) inset;
+}
 
 /* || FONTS */
 
 /* || GRIDS */
 #headings-grid-container {
+	grid-template-areas:
+		"h c"
+		"j d";
+}
+#html-index-link {
+	grid-area: h;
+}
+#css-index-link {
+	grid-area: c;
+}
+#js-index-link {
+	grid-area: j;
+}
+#dom-index-link {
+	grid-area: d;
 }
 
 /* || OTHER */

@@ -1,11 +1,12 @@
 import {
-	makeEntry,
+	test,
+	makeHeader,
 	makeNavBar,
 	makeFooter,
-	createLink,
-	createP,
+	//makeEntries,
 } from "../public/script.js";
 
 // on load, ensure NavBar and Footer are created
+makeHeader();
 makeNavBar();
 makeFooter();

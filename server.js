@@ -1,11 +1,29 @@
 // import express
-const express = require("express");
-// import path
-const path = require("path");
+import express from "express";
+import favicon from "serve-favicon";
+// import seed
+import { seed } from "./src/db/seed.js";
+// import routes
+import { createRouter } from "./src/routes/createRouter.js";
+
+// translate __dirname
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // create app
 const app = express();
 // declare port
 const port = 5000;
+
+// parse requests in json and encoded url
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+// serve favicon
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // serve public resources
 app.use("/public", express.static(path.join(__dirname, "public")));
@@ -13,6 +31,9 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 // serve static webpages
 // index
 app.use("/index", express.static(path.join(__dirname, "1-index-page")));
+app.get("/", (req, res) => {
+	res.redirect("/index");
+});
 // html
 app.use(
 	"/html",
@@ -34,18 +55,27 @@ app.use(
 );
 // dom
 app.use(
-	"/dom",
-	express.static(path.join(__dirname, "5-dom-page"), {
-		index: "dom-page.html",
+	"/react",
+	express.static(path.join(__dirname, "5-react-page"), {
+		index: "react-page.html",
 	})
 );
 // other
 app.use(
-	"/other",
-	express.static(path.join(__dirname, "6-other-page"), {
-		index: "other-page.html",
+	"/create",
+	express.static(path.join(__dirname, "6-create-page"), {
+		index: "create-page.html",
 	})
 );
+
+// set Routers
+app.use("/create", createRouter);
+
+// endpoint to seed database
+app.get("/seed", async (req, res) => {
+	await seed();
+	res.status(201).send("Database reset!");
+});
 
 // listen
 app.listen(port, () => {

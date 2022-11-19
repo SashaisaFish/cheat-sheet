@@ -23,6 +23,7 @@
 	}
 	.link-btn {
 		margin: 0.5vh 0.5vw;
+		height: 12vh;
 		text-align: center;
 		align-self: center;
 		/* padding: auto 0; */
@@ -64,7 +65,7 @@
 	.link-btn {
 		box-sizing: border-box;
 		margin: 0.25vh 0;
-		/* height: 50px; */
+		height: 40px;
 		display: flex;
 		place-content: center;
 	}

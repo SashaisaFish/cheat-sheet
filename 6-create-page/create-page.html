@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../public/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../public/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../public/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../public/favicon/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="../public/favicon/safari-pinned-tab.svg"
+			color="#5bbad5"
+		/>
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="create-page.css" type="text/css" />
+		<title>Sasha's Coding Cheatsheet</title>
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<section id="create-entry">
+				<h2>Create an Entry</h2>
+				<form action="/create/new-entry" method="post">
+					<input type="reset" value="Clear" />
+					<select name="topic" id="topic">
+						<option value="html">HTML</option>
+						<option value="css">CSS</option>
+						<option value="js">JavaScript</option>
+						<option value="react">React</option>
+					</select>
+					<input type="text" name="subtopic" id="subtopic" />
+					<input
+						type="text"
+						name="entryElementId"
+						id="entryElementId"
+						required
+					/>
+					<input
+						type="text"
+						name="entryTitle"
+						id="entryTitle"
+						required
+					/>
+					<input type="submit" value="Submit" />
+				</form>
+			</section>
+
+			<section id="fill-entry">
+				<h2>Fill an Entry</h2>
+				<section id="fill-btn-container">
+					<h3>Choose</h3>
+					<button id="create-h4-btn">Heading</button>
+					<button id="create-p-btn">Text</button>
+					<button id="create-a-btn">Link</button>
+					<button id="create-img-btn">Image</button>
+				</section>
+				<form
+					action="/create/fill-entry/h4"
+					method="post"
+					class="hidden"
+				>
+					<input type="reset" value="Clear" />
+					<input type="hidden" name="h4Tag" id="h4Tag" value="h4" />
+					<select name="h4ParentId" id="h4ParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="h4ElementId" id="h4ElementId" />
+					<input type="text" name="h4Text" id="h4Text" required />
+					<input type="submit" value="Submit" />
+				</form>
+				<form
+					action="/create/fill-entry/p"
+					method="post"
+					class="hidden"
+				>
+					<input type="reset" value="Clear" />
+					<input type="hidden" name="pTag" id="pTag" value="p" />
+					<select name="pParentId" id="pParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="pElementId" id="pElementId" />
+					<input type="text" name="pText" id="pText" required />
+					<input type="submit" value="Submit" />
+				</form>
+				<form
+					action="/create/fill-entry/a"
+					method="post"
+					class="hidden"
+				>
+					<input type="reset" value="Clear" />
+					<input type="hidden" name="aTag" id="aTag" value="a" />
+					<select name="aParentId" id="aParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="aElementId" id="aElementId" />
+					<input type="text" name="aHref" id="aHref" required />
+					<input type="text" name="aText" id="aText" required />
+					<input type="submit" value="Submit" />
+				</form>
+				<form
+					action="/create/fill-entry/img"
+					method="post"
+					class="hidden"
+				>
+					<input type="reset" value="Clear" />
+					<input
+						type="hidden"
+						name="imgTag"
+						id="imgTag"
+						value="img"
+					/>
+					<select name="imgParentId" id="imgParentId">
+						<!-- options filled from script with all id's of entries -->
+					</select>
+					<input type="text" name="imgElementId" id="imgElementId" />
+					<input type="text" name="imgSrc" id="imgSrc" required />
+					<input type="text" name="imgAlt" id="imgAlt" required />
+					<input type="submit" value="Submit" />
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+		<script src="../public/pageMaker.js" type="module"></script>
+		<script src="create-page.js" type="module"></script>
+	</body>
+</html>

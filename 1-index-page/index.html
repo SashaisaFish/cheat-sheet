@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../public/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../public/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../public/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../public/favicon/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="../public/favicon/safari-pinned-tab.svg"
+			color="#5bbad5"
+		/>
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,23 +35,40 @@
 	<body>
 		<header></header>
 		<main>
-			<h2>TITLEPLACEHOLDER</h2>
+			<h2>TOPICS</h2>
 			<section id="headings-grid-container" class="grid-wrapper">
-				<a href="/html/">
+				<a
+					id="html-index-link"
+					class="html-bubble left-grid-btn"
+					href="/html/"
+				>
 					<h3 id="html-index-heading">HTML</h3>
 				</a>
-				<a href="/css/">
+				<a
+					id="css-index-link"
+					class="css-bubble right-grid-btn"
+					href="/css/"
+				>
 					<h3 id="css-index-heading">CSS</h3>
 				</a>
-				<a href="/js/">
+				<a
+					id="js-index-link"
+					class="js-bubble left-grid-btn"
+					href="/js/"
+				>
 					<h3 id="js-index-heading">JavaScript</h3>
 				</a>
-				<a href="/dom/">
-					<h3 id="dom-index-heading">DOM</h3>
+				<a
+					id="react-index-link"
+					class="react-bubble right-grid-btn"
+					href="/react/"
+				>
+					<h3 id="react-index-heading">React</h3>
 				</a>
 			</section>
 		</main>
 		<footer></footer>
+		<script src="../public/pageMaker.js" type="module"></script>
 		<script src="index.js" type="module"></script>
 	</body>
 </html>

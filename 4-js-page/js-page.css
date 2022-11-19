@@ -1,4 +1,7 @@
 @import "../public/style.css";
+@import "../public/media-queries/phone.css" screen and (max-width: 1079px);
+@import "../public/media-queries/tablet.css" screen and (min-width: 481px) and
+	(max-width: 1023px);
 
 /* || PRIMARY ELEMENTS */
 main {
