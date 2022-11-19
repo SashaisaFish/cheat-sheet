@@ -1,4 +1,7 @@
 @import "../public/style.css";
+@import "../public/media-queries/phone.css" screen and (max-width: 1079px);
+@import "../public/media-queries/tablet.css" screen and (min-width: 481px) and
+	(max-width: 1023px);
 
 /* || PRIMARY ELEMENTS */
 header {
@@ -6,31 +9,36 @@ header {
 	border-radius: 4px;
 }
 main {
-	display: flex;
-	text-align: center;
-	flex-direction: column;
+	width: 65vw;
+	min-height: 325px;
 }
 /* || SECONDARY ELEMENTS */
 h1 {
 	border-right: 4px solid var(--indigo-border);
 	border-radius: 2px;
 }
-h3:hover {
-	flex-grow: 2;
-}
 
 /* || CLASSES */
+.grid-wrapper {
+	flex-grow: 1;
+	height: 80%;
+	width: 100%;
+	place-self: center;
+	place-items: stretch;
+	place-content: stretch;
+}
 .left-grid-btn,
 .right-grid-btn {
 	box-sizing: border-box;
 	display: flex;
 	place-content: center;
 	place-items: center;
-	margin: 1vh 2vw;
+	margin: 3vh 2vw;
 	min-width: 110px;
 	min-height: 10vh;
 	border-radius: 8px;
 	box-shadow: var(--button-shine), var(--drop-shadow);
+	font-size: 1.2em;
 }
 .left-grid-btn:hover,
 .left-grid-btn:active {

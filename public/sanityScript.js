@@ -28,7 +28,7 @@ async function queryEntryTopic(topicQuery) {
 
 async function queryParent(parentQuery) {
 	// define QUERY and PROJECT_URL
-	const QUERY = encodeURIComponent(`*[parentId == ${parentQuery}]`);
+	const QUERY = encodeURIComponent(`*[references(${parentQuery})]`);
 	const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 	// fetch query
 	const res = await fetch(PROJECT_URL);
@@ -39,7 +39,7 @@ async function queryParent(parentQuery) {
 async function queryTypeParent(parentQuery, typeQuery) {
 	// define QUERY and PROJECT_URL
 	const QUERY = encodeURIComponent(
-		`*[_type == "${typeQuery}" && parentId == ${parentQuery}]`
+		`*[_type == "${typeQuery}" && parentTitle == ${parentQuery}]`
 	);
 	const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 	// fetch query
@@ -51,7 +51,7 @@ async function queryTypeParent(parentQuery, typeQuery) {
 async function queryNotTypeParent(parentQuery, typeQuery) {
 	// define QUERY and PROJECT_URL
 	const QUERY = encodeURIComponent(
-		`*[(!(_type == "${typeQuery}")) && parentId == ${parentQuery}] | order(createdAt)`
+		`*[(!(_type == "${typeQuery}")) && parentTitle == ${parentQuery}] | order(createdAt)`
 	);
 	const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 	// fetch query

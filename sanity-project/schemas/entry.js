@@ -4,6 +4,11 @@ export default {
 	title: "Entry",
 	fields: [
 		{
+			name: "title",
+			type: "string",
+			title: "Title",
+		},
+		{
 			name: "topic",
 			type: "string",
 			title: "Topic",
@@ -17,11 +22,6 @@ export default {
 			name: "elementId",
 			type: "string",
 			title: "Element ID",
-		},
-		{
-			name: "title",
-			type: "string",
-			title: "Title",
 		},
 	],
 };

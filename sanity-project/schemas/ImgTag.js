@@ -4,9 +4,15 @@ export default {
 	title: "<img> Tag",
 	fields: [
 		{
-			name: "parentId",
+			name: "title",
 			type: "string",
-			title: "Parent ID",
+			title: "Title",
+		},
+		{
+			title: "Parent Title",
+			name: "parentTitle",
+			type: "reference",
+			to: [{ type: "Entry" }],
 		},
 		{
 			name: "childId",

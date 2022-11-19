@@ -8,6 +8,9 @@ import {
 
 const container = document.getElementById("article-container");
 const entries = await queryEntryTopic("html");
+console.log(entries);
+const allChildren = await queryParent(`"Head Tags"`);
+console.log("ALL NO FUNC:", allChildren);
 
 entries.forEach(async (entry) => {
 	const newEntry = document.createElement("article");
@@ -24,14 +27,15 @@ entries.forEach(async (entry) => {
 	newEntry.append(newEntryInfo);
 	newEntryInfo.id = `${entry.elementId}-info`;
 	newEntryInfo.classList.add("info-entry-container");
-	const h4Children = await queryTypeParent(entry.elementId, "H4Tag");
+	const h4Children = await queryTypeParent(entry.title, "H4Tag");
 	// h4Children.forEach((element) => {
 	// 	const newH4 = document.createElement("h4");
 	// 	newEntryInfo.append(newH4);
 	// 	newH4.innerText = element.content;
 	// });
-	const allChildren = await queryParent(entry.elementId);
-	const otherChildren = await queryNotTypeParent(entry.elementId, "H4Tag");
+	console.log(entry.title);
+	const allChildren = await queryParent(entry.title);
+	const otherChildren = await queryNotTypeParent(entry.title, "H4Tag");
 	console.log("ALL:", allChildren);
 	console.log("OTHER:", otherChildren);
 
@@ -57,5 +61,3 @@ entries.forEach(async (entry) => {
 	// 	const imgTags = await queryProject("ImgTag");
 	// });
 });
-
-console.log(entries);
